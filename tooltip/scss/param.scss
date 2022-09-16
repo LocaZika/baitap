@@ -1,0 +1,48 @@
+$red: #eb4d4b;
+$light-blue: #dff9fb;
+%text-cap{
+  text-transform: capitalize;
+}
+%text-up{
+  text-transform: uppercase;
+}
+%d-flex{
+  display: flex;
+}
+%d-inline{
+  display: inline-block;
+}
+%d-block{
+  display: block;
+}
+%pos-rel{
+  position: relative;
+}
+%pos-abs{
+  position: absolute;
+}
+%w-100{
+  width: 100%;
+}
+%h-100{
+  height: 100%;
+}
+%h-auto{
+  height: auto;
+}
+@mixin flex($content, $items) {
+  @extend %d-flex;
+  justify-content: $content;
+  align-items: $items;
+}
+@mixin border($color) {
+  @extend %border;
+  border-color: $color;
+}
+%border{
+  border: 5px solid;
+}
+%pos-0{
+  top: 0;
+  left: 0;
+}

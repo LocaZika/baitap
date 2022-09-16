@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #3498db;
+}
+.container {
+  height: auto;
+}
+p {
+  font-size: 24px;
+  color: black;
+  cursor: context-menu;
+}
+.container span {
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+}
+.container span::before {
+  content: "Đây là Tooltip";
+  font-size: 14px;
+  color: #2d3436;
+  background-color: #f5f6fa;
+  position: absolute;
+  width: 90px;
+  top: -40px;
+  left: 0;
+  padding: 5px 7px;
+  border-radius: 15px;
+  display: none;
+}
+.container span::after {
+  content: " ";
+  width: 10px;
+  height: 10px;
+  background-color: #f5f6fa;
+  transform: rotate(45deg);
+  display: none;
+  position: absolute;
+  top: -18px;
+  left: 40%;
+}
+.container span:hover::before,
+.container span:hover::after {
+  display: block;
+}
