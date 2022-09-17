@@ -1,6 +1,6 @@
 @use 'sass:math';
-@import 'param';
-@import 'variable';
+@import '../../scss/param.scss';
+@import '../../scss/variable';
 
 body{
   background-color: var(--blue);
