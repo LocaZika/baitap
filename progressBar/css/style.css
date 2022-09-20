@@ -1,0 +1,136 @@
+body {
+  display: flex;
+}
+
+.container #circle4 > p, .container .circle {
+  position: relative;
+}
+
+.container #circle4 .wave::before, .container #circle4 .wave::after, .container #circle4 .wave, .container #circle4, .container #circle3 > span::before, .container #circle3 > span, .container #circle3::before, .container #circle3::after {
+  position: absolute;
+}
+
+.container #circle3 > span {
+  top: 0;
+  left: 0;
+}
+
+:root {
+  --blue: #2980b9;
+  --light-blue: #76daff;
+  --black: #2d3436;
+  --white: #f5f6fa;
+  --green: #27ae60;
+  --pink: #D980FA;
+  --orange: #ff9f43;
+  --red: #ee5253;
+  --yellow: #ffdd59;
+  --violet: #5f27cd;
+  --gray: #a4b0be;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--blue);
+}
+
+:root {
+  --topWave: 50%;
+}
+
+.container {
+  width: 90%;
+}
+.container #percent {
+  border: none;
+  padding: 1rem;
+  font-size: 24px;
+  display: block;
+}
+.container .circle {
+  text-align: center;
+  width: 15rem;
+  height: 15rem;
+  line-height: 15rem;
+  margin: 2rem;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 700;
+  display: inline-block;
+}
+.container #circle1 {
+  background-image: radial-gradient(var(--white) 0 60px, transparent 60px), conic-gradient(var(--violet) 0 70%, var(--white) 70%);
+}
+.container #circle2 {
+  background-color: var(--black);
+  background-image: radial-gradient(var(--white) 0 60px, transparent 60px), repeating-conic-gradient(var(--white) 0 1%, transparent 1% 5%), repeating-conic-gradient(var(--white) 0 1%, transparent 1.2% 5%), repeating-conic-gradient(transparent 0 70%, var(--gray) 70% 100%);
+}
+.container #circle3 {
+  background-image: radial-gradient(var(--white) 0 60px, transparent 60px), conic-gradient(var(--violet) 0 70%, var(--white) 70%);
+}
+.container #circle3::before, .container #circle3::after {
+  content: " ";
+  border-radius: 50%;
+  background-color: var(--violet);
+  top: 0;
+  left: 45%;
+  width: 10%;
+  height: 10%;
+}
+.container #circle3 > span {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.container #circle3 > span::before {
+  content: " ";
+  border-radius: 50%;
+  background-color: var(--violet);
+  top: 0;
+  left: 45%;
+  width: 10%;
+  height: 10%;
+}
+.container #circle4 {
+  background-color: var(--light-blue);
+  border: 5px solid var(--white);
+  overflow: hidden;
+}
+.container #circle4 > p {
+  z-index: 2;
+}
+.container #circle4 .wave {
+  width: 15rem;
+  height: 15rem;
+  top: -5%;
+  left: -5%;
+}
+.container #circle4 .wave::before, .container #circle4 .wave::after {
+  content: " ";
+  width: 30rem;
+  height: 30rem;
+  top: var(--topWave);
+  left: -50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 35%;
+  animation: rotate 6s linear infinite;
+  transform: rotate(0);
+}
+.container #circle4 .wave::after {
+  border-radius: 40%;
+  background-color: rgba(255, 255, 255, 0.9);
+  animation: rotate 10s linear -5s infinite;
+}
+
+@keyframes rotate {
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

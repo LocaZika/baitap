@@ -1,0 +1,111 @@
+@import '../../scss/param.scss';
+@import '../../scss/variable.scss';
+
+body{
+  @include flex(center, center);
+  height: 100vh;
+  background-color: var(--blue);
+}
+:root{
+  --topWave: 50%;
+}
+.container{
+  width: 90%;
+  #percent{
+    border: none;
+    padding: 1rem;
+    font-size: 24px;
+    display: block;
+  }
+  .circle {
+      text-align: center;
+      width: 15rem;
+      height: 15rem;
+      line-height: 15rem;
+      margin: 2rem;
+      border-radius: 50%;
+      font-size: 24px;
+      font-weight: 700;
+      @extend %pos-rel;
+      display: inline-block;
+    }
+  #circle1{
+    background-image: radial-gradient(var(--white) 0 60px, transparent 60px),conic-gradient(var(--violet) 0 70%, var(--white) 70%);
+  }
+  #circle2{
+    background-color: var(--black);
+    background-image: radial-gradient(var(--white) 0 60px, transparent 60px),repeating-conic-gradient(var(--white) 0 1%, transparent 1% 5%), repeating-conic-gradient(var(--white) 0 1%, transparent 1.2% 5%),repeating-conic-gradient(transparent 0 70%, var(--gray) 70% 100%);
+  }
+  #circle3{
+    background-image: radial-gradient(var(--white) 0 60px, transparent 60px), conic-gradient(var(--violet) 0 70%, var(--white) 70%);
+    &::before, &::after{
+      content: ' ';
+      @extend %pos-abs;
+      border-radius: 50%;
+      background-color: var(--violet);
+      top: 0;
+      left: 45%;
+      width: 10%;
+      height: 10%;
+    }
+    >span{
+      @extend %pos-abs;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      @extend %pos-0;
+      &::before{
+        content: ' ';
+        @extend %pos-abs;
+        border-radius: 50%;
+        background-color: var(--violet);
+        top: 0;
+        left: 45%;
+        width: 10%;
+        height: 10%;
+      }
+    }
+    // &::after{
+    //   transform: rotate(70deg) translate(6rem, 9rem);
+    // }
+  }
+  #circle4 {
+    background-color: var(--light-blue);
+    border: 5px solid var(--white);
+    overflow: hidden;
+    @extend %pos-abs;
+    >p{
+      @extend %pos-rel;
+      z-index: 2;
+    }
+    .wave {
+      @extend %pos-abs;
+      width: 15rem;
+      height: 15rem;
+      top: -5%;
+      left: -5%;
+
+      &::before, &::after{
+        content: ' ';
+        @extend %pos-abs;
+        width: 30rem;
+        height: 30rem;
+        top: var(--topWave);
+        left: -50%;
+        background-color: rgba($color: #fff, $alpha: .4);
+        border-radius: 35%;
+        animation: rotate 6s linear infinite;
+        transform: rotate(0);
+      }
+      &::after{
+        border-radius: 40%;
+        background-color: rgba($color: #fff, $alpha: .9);
+        animation: rotate 10s linear -5s infinite;
+      }
+    }
+  }
+}
+@keyframes rotate {
+  50%{transform: rotate(180deg);}
+  100%{transform: rotate(360deg);}
+}

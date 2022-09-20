@@ -35,8 +35,9 @@ $light-blue: #dff9fb;
   justify-content: $content;
   align-items: $items;
 }
-@mixin border($color) {
+@mixin border($width,$color) {
   @extend %border;
+  border-width: $width;
   border-color: $color;
 }
 %border{
