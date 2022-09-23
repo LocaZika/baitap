@@ -1,0 +1,77 @@
+@import '../../scss/param.scss';
+@import '../../scss/variable.scss';
+
+:root{
+  --green-leaves: #2ecc71;
+}
+input[type='checkbox']{
+  appearance: none;
+  display: block;
+  width: 15rem;
+  height: 5rem;
+  background-color: var(--white);
+  border-radius: 25px;
+  transition: background-color 0s .5s linear
+}
+body{
+  background-color: var(--blue);
+}
+.container{
+  @include flex(space-around,center);
+  width: 100%;
+  height: 100vh;
+  #switch1{
+    @extend %pos-rel;
+    &::before{
+      content: ' ';
+      @extend %pos-abs;
+      @extend %pos-0;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background-color: red;
+      transition: left 0.5s linear;
+    }
+    &:checked{
+      background-color: var(--green);
+      &::before{
+        left: 10rem;
+      }
+    }
+  }
+  #switch2{
+    @extend %pos-rel;
+    box-shadow: inset 0  0 10px 0 rgba($color: #000000, $alpha: .8), inset 0  0 10px 0 rgba($color: #000000, $alpha: .8), inset 0  0 10px 0 rgba($color: #000000, $alpha: .8);
+    &::before{
+      content: ' ';
+      @extend %pos-abs;
+      top: 5px;
+      left: 5px;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background-color: red;
+      transition: left 0.5s linear;
+    }
+    &::after{
+      content: ' ';
+      @extend %pos-abs;
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--white);
+      top: 50%;
+      left: 0;
+      transform: translateX(-50);
+    }
+
+    &:checked{
+      background-color: var(--green-leaves);
+      &::before{
+        left: 10rem;
+      }
+      &::after{
+        background-color: var(--green-leaves);
+      }
+    }
+  }
+}

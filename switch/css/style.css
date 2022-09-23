@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+}
+
+.container #switch2, .container #switch1 {
+  position: relative;
+}
+
+.container #switch2::after, .container #switch2::before, .container #switch1::before {
+  position: absolute;
+}
+
+.container #switch1::before {
+  top: 0;
+  left: 0;
+}
+
+:root {
+  --blue: #2980b9;
+  --light-blue: #76daff;
+  --black: #2d3436;
+  --white: #f5f6fa;
+  --green: #27ae60;
+  --pink: #D980FA;
+  --orange: #ff9f43;
+  --red: #ee5253;
+  --yellow: #ffdd59;
+  --violet: #5f27cd;
+  --gray: #a4b0be;
+}
+
+:root {
+  --green-leaves: #2ecc71;
+}
+
+input[type=checkbox] {
+  appearance: none;
+  display: block;
+  width: 15rem;
+  height: 5rem;
+  background-color: var(--white);
+  border-radius: 25px;
+  transition: background-color 0s 0.5s linear;
+}
+
+body {
+  background-color: var(--blue);
+}
+
+.container {
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.container #switch1::before {
+  content: " ";
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: red;
+  transition: left 0.5s linear;
+}
+.container #switch1:checked {
+  background-color: var(--green);
+}
+.container #switch1:checked::before {
+  left: 10rem;
+}
+.container #switch2 {
+  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.8), inset 0 0 10px 0 rgba(0, 0, 0, 0.8), inset 0 0 10px 0 rgba(0, 0, 0, 0.8);
+}
+.container #switch2::before {
+  content: " ";
+  top: 5px;
+  left: 5px;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: red;
+  transition: left 0.5s linear;
+}
+.container #switch2::after {
+  content: " ";
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--white);
+}
+.container #switch2:checked {
+  background-color: var(--green-leaves);
+}
+.container #switch2:checked::before {
+  left: 10rem;
+}
+.container #switch2:checked::after {
+  background-color: var(--green-leaves);
+}
+
+/*# sourceMappingURL=style.css.map */
