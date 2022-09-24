@@ -1,0 +1,155 @@
+@import 'variable';
+@import '../../scss/param.scss';
+html{
+  font-size: 62.5%;
+  height: 100%;
+}
+body{
+  @include flex(center, center);
+  height: 100%;
+  background-color: var(--gray);
+}
+.container{
+  width: 100%;
+  .signin {
+    width: 80%;
+    @extend %d-flex;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 10px 10px 0 var(--gray-dark);
+    .signin-form,
+    .signup {
+      width: 50%;
+      @include flex(center, center);
+      flex-direction: column;
+      padding: 10rem;
+      h1 {
+        font-size: 30px;
+        margin: 5rem 0 1.5rem 0;
+        &::first-letter{
+          text-transform: capitalize;
+        }
+        span {
+          text-transform: uppercase;
+        }
+      }
+      button{
+        font-size: 24px;
+        text-transform: uppercase;
+        background-color: var(--blue);
+        border: none;
+        cursor: pointer;
+      }
+      button, p{
+        color: var(--white);
+      }
+    }
+    .signin-form{
+      background-color: var(--white);
+      transform-origin: left;
+      transition: transform 1s ease;
+      .socials{
+        margin: 1.5rem 0;
+        .socials-icon{
+          border: 1px solid var(--blue);
+          border-radius: 50%;
+          font-size: 25px;
+          color: var(--black);
+          @extend %d-inline;
+          width: 2rem;
+          height: 2rem;
+          padding: 2rem;
+          margin: 0 .5rem;
+          @extend %pos-rel;
+          cursor: pointer;
+          transition: background-color .5s linear;
+          >i{
+            @extend %pos-abs;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          &:hover{
+            background-color: var(--blue);
+          }
+        }
+      }
+      .signin-input{
+        margin: 2.5rem 0;
+        @include flex(space-around, center);
+        flex-direction: column;
+        >input, label{
+          font-size: 24px;
+        }
+        input{
+          border: none;
+          padding: 1rem;
+          background-color: var(--gray);
+          &:focus{
+            + label{
+              color: var(--black);
+              transform: translate(-10rem, -7.5rem);
+            }
+          }
+        }
+        label{
+          transform: translate(-8rem, -3.75rem);
+          color: var(--gray-dark);
+          transition: transform .2s linear, color .5s;
+          text-transform: capitalize;
+        }
+        a{
+          font-size: 16px;
+          color: var(--gray-text);
+          font-weight: 700;
+          @extend %d-block;
+          text-align: center;
+          margin-bottom: 2rem;
+          &:hover{
+            color: var(--blue);
+          }
+          &::first-letter{
+            text-transform: capitalize;
+          }
+        }
+        button{
+          @extend %d-block;
+          margin: 0 8rem;
+          padding: 2rem 4rem;
+          border-radius: 50px;
+          transition: all .2s linear;
+          transform: translateY(0) rotate3d(8, 0, 0, 45deg);
+          &:hover{
+            box-shadow: 0 10px 0 0 rgba($color: #60cdd4, $alpha: .7);
+            transform: translateY(-10px) rotate3d(8, 0, 0, 45deg);
+          }
+          &:active{
+            transform: translateY(0) rotate3d(8, 0, 0, 45deg);
+            box-shadow: none;
+          }
+        }
+      }
+    }
+    .signup{
+      background-color: var(--blue);
+      @include flex(center, center);
+      p{
+        font-size: 20px;
+        margin-bottom: 1.5rem;
+        &::first-letter{
+          text-transform: capitalize;
+        }
+      }
+      button{
+          padding: 1rem 2rem;
+          border-radius: 50px;
+          border: 1px solid var(--white);
+          &:hover{
+            background-color: var(--white);
+            color: var(--blue);
+          }
+      }
+    }
+  }
+}

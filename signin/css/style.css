@@ -1,0 +1,191 @@
+:root {
+  --blue: #60cdd4;
+  --gray: #ededef;
+  --gray-dark: #a7a7a7;
+  --gray-text: #787878;
+  --black: #00061a;
+  --white: #ffffff;
+  --orange: #ffd44f;
+  --violet: #e354fa;
+}
+
+.container .signin .signin-form .signin-input, .container .signin .signin-form,
+.container .signin .signup, .container .signin, body {
+  display: flex;
+}
+
+.container .signin .signin-form .socials .socials-icon {
+  display: inline-block;
+}
+
+.container .signin .signin-form .signin-input button, .container .signin .signin-form .signin-input a {
+  display: block;
+}
+
+.container .signin .signin-form .socials .socials-icon {
+  position: relative;
+}
+
+.container .signin .signin-form .socials .socials-icon > i {
+  position: absolute;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: var(--gray);
+}
+
+.container {
+  width: 100%;
+}
+.container .signin {
+  width: 80%;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 10px 10px 0 var(--gray-dark);
+}
+.container .signin .signin-form,
+.container .signin .signup {
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10rem;
+}
+.container .signin .signin-form h1,
+.container .signin .signup h1 {
+  font-size: 30px;
+  margin: 5rem 0 1.5rem 0;
+}
+.container .signin .signin-form h1::first-letter,
+.container .signin .signup h1::first-letter {
+  text-transform: capitalize;
+}
+.container .signin .signin-form h1 span,
+.container .signin .signup h1 span {
+  text-transform: uppercase;
+}
+.container .signin .signin-form button,
+.container .signin .signup button {
+  font-size: 24px;
+  text-transform: uppercase;
+  background-color: var(--blue);
+  border: none;
+  cursor: pointer;
+}
+.container .signin .signin-form button, .container .signin .signin-form p,
+.container .signin .signup button,
+.container .signin .signup p {
+  color: var(--white);
+}
+.container .signin .signin-form {
+  background-color: var(--white);
+  transform-origin: left;
+  transition: transform 1s ease;
+}
+.container .signin .signin-form .socials {
+  margin: 1.5rem 0;
+}
+.container .signin .signin-form .socials .socials-icon {
+  border: 1px solid var(--blue);
+  border-radius: 50%;
+  font-size: 25px;
+  color: var(--black);
+  width: 2rem;
+  height: 2rem;
+  padding: 2rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.5s linear;
+}
+.container .signin .signin-form .socials .socials-icon > i {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .signin .signin-form .socials .socials-icon:hover {
+  background-color: var(--blue);
+}
+.container .signin .signin-form .signin-input {
+  margin: 2.5rem 0;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.container .signin .signin-form .signin-input > input, .container .signin .signin-form .signin-input label {
+  font-size: 24px;
+}
+.container .signin .signin-form .signin-input input {
+  border: none;
+  padding: 1rem;
+  background-color: var(--gray);
+}
+.container .signin .signin-form .signin-input input:focus + label {
+  color: var(--black);
+  transform: translate(-10rem, -7.5rem);
+}
+.container .signin .signin-form .signin-input label {
+  transform: translate(-8rem, -3.75rem);
+  color: var(--gray-dark);
+  transition: transform 0.2s linear, color 0.5s;
+  text-transform: capitalize;
+}
+.container .signin .signin-form .signin-input a {
+  font-size: 16px;
+  color: var(--gray-text);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.container .signin .signin-form .signin-input a:hover {
+  color: var(--blue);
+}
+.container .signin .signin-form .signin-input a::first-letter {
+  text-transform: capitalize;
+}
+.container .signin .signin-form .signin-input button {
+  margin: 0 8rem;
+  padding: 2rem 4rem;
+  border-radius: 50px;
+  transition: all 0.2s linear;
+  transform: translateY(0) rotate3d(8, 0, 0, 45deg);
+}
+.container .signin .signin-form .signin-input button:hover {
+  box-shadow: 0 10px 0 0 rgba(96, 205, 212, 0.7);
+  transform: translateY(-10px) rotate3d(8, 0, 0, 45deg);
+}
+.container .signin .signin-form .signin-input button:active {
+  transform: translateY(0) rotate3d(8, 0, 0, 45deg);
+  box-shadow: none;
+}
+.container .signin .signup {
+  background-color: var(--blue);
+  justify-content: center;
+  align-items: center;
+}
+.container .signin .signup p {
+  font-size: 20px;
+  margin-bottom: 1.5rem;
+}
+.container .signin .signup p::first-letter {
+  text-transform: capitalize;
+}
+.container .signin .signup button {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  border: 1px solid var(--white);
+}
+.container .signin .signup button:hover {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+/*# sourceMappingURL=style.css.map */
