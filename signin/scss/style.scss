@@ -5,10 +5,19 @@ html{
   height: 100%;
 }
 body{
-  @include flex(center, space-between);
+  @include flex(unset, center);
   flex-direction: column;
   height: 100%;
   background-color: var(--gray);
+}
+.signupFormTest{
+  >button{
+    padding: 1rem 2rem;
+    margin: 2rem;
+    &::first-letter{
+      text-transform: capitalize;
+    }
+  }
 }
 .container{
   width: 100%;
@@ -50,7 +59,7 @@ body{
     .signin-form{
       background-color: var(--white);
       transform-origin: left;
-      transition: transform 1s ease;
+      transition: transform 1.5s ease;
       .socials{
         margin: 1.5rem 0;
         .socials-icon{
@@ -65,7 +74,7 @@ body{
           margin: 0 .5rem;
           @extend %pos-rel;
           cursor: pointer;
-          transition: background-color .5s linear;
+          transition: background-color .2s linear;
           >i{
             @extend %pos-abs;
             top: 50%;
@@ -139,9 +148,10 @@ body{
       height: 100%;
       background-color: var(--white);
       z-index: 0;
-      transition: transform 1.5s linear, left 1.5s, z-index 1.5s;
+      transition: transform 1.5s linear, left 1s, z-index 0s 1s;
       .signup-input{
         margin: 2.5rem 0;
+        padding: 0 10rem;
         @include flex(space-around, center);
         flex-direction: column;
         .input-field{

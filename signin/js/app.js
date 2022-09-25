@@ -16,12 +16,12 @@ signUpButton1.addEventListener("click", () => {
       signInForm.style = "";
     }, 1000);
     signUpForm.style.transformOrigin = "left";
-    signUpForm.style.transform = "perspective(1200px) rotateY(20deg)";
+    signUpForm.style.transform = "perspective(1200px) rotateY(45deg)";
     signUpForm.style.left = "0";
     setTimeout(() => {
       signUpForm.style.left = "0";
       signUpForm.style.transform = "perspective(1200px) rotateY(0deg)";
-    }, 1000);
+    }, 500);
   }, 1000);
 });
 /* MOVE TOP AND LEFT */
@@ -33,14 +33,14 @@ signUpButton2.addEventListener("click", () => {
     signInForm.style.transform = "perspective(1200px) rotateY(20deg)";
     setTimeout(() => {
       signInForm.style = "";
-    }, 1500);
+    }, 1000);
     setTimeout(() => {
       signUpForm.style.left = "0";
       signUpForm.style.transform = "perspective(1200px) rotateY(0deg)";
       signUpForm.style.zIndex = "3";
       setTimeout(() => {
         signUpForm.style.left = "50%";
-      }, 500);
+      }, 1000);
     }, 1000);
   }, 1000);
 });
