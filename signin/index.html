@@ -13,6 +13,11 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="signupFormTest">
+      <button id="btn-signup-form1">type 1</button>
+      <button id="btn-signup-form2">type 2</button>
+      <button id="btn-signup-form3">type 3</button>
+    </div>
     <div class="container">
       <div class="signin">
         <div class="signin-form">
@@ -29,6 +34,26 @@
             <label for="password">password</label>
             <a href="#">forgot your account?</a>
             <button>sign in</button>
+          </form>
+        </div>
+        <div class="signup-form">
+          <h1>sign up</h1>
+          <form method="post" class="signup-input">
+            <div class="input-field">
+              <input type="text" id="signup-user" />
+              <label for="signup-user">username</label>
+              <input type="password" id="signup-password" />
+              <label for="signup-password">password</label>
+              <input type="password" id="signup-cfpassword" />
+              <label for="signup-cfpassword">confirm password</label>
+              <input type="email" id="signup-email" />
+              <label for="signup-email">email</label>
+            </div>
+            <div class="term">
+              <input type="checkbox" id="cb-term" />
+              <label for="cb-term">i agree to the <a href="#">term and conditions</a></label>
+            </div>
+            <button>sign up</button>
           </form>
         </div>
         <div class="signup">

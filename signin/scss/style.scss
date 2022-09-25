@@ -5,7 +5,8 @@ html{
   height: 100%;
 }
 body{
-  @include flex(center, center);
+  @include flex(center, space-between);
+  flex-direction: column;
   height: 100%;
   background-color: var(--gray);
 }
@@ -14,11 +15,12 @@ body{
   .signin {
     width: 80%;
     @extend %d-flex;
+    @extend %pos-rel;
     border-radius: 25px;
     overflow: hidden;
     margin: 0 auto;
     box-shadow: 0 10px 10px 0 var(--gray-dark);
-    .signin-form,
+    .signin-form, .signup-form,
     .signup {
       width: 50%;
       @include flex(center, center);
@@ -131,9 +133,94 @@ body{
         }
       }
     }
+    .signup-form{
+      @extend %pos-abs;
+      left: 50%;
+      height: 100%;
+      background-color: var(--white);
+      z-index: 0;
+      transition: transform 1.5s linear, left 1.5s, z-index 1.5s;
+      .signup-input{
+        margin: 2.5rem 0;
+        @include flex(space-around, center);
+        flex-direction: column;
+        .input-field{
+          >input, label{
+            font-size: 24px;
+          }
+          input{
+            border: none;
+            padding: 1rem;
+            background-color: var(--gray);
+            width: 100%;
+            &:focus{
+              + label{
+                color: var(--black);
+                transform: translate(0, -7.75rem);
+              }
+            }
+          }
+          >label{
+            @extend %d-inline;
+            transform: translate(2rem, -3.75rem);
+            color: var(--gray-dark);
+            transition: transform .2s linear, color .5s;
+            text-transform: capitalize;
+          }
+          a{
+            font-size: 16px;
+            color: var(--gray-text);
+            font-weight: 700;
+            @extend %d-block;
+            text-align: center;
+            margin-bottom: 2rem;
+            &:hover{
+              color: var(--blue);
+            }
+            &::first-letter{
+              text-transform: capitalize;
+            }
+          }
+        }
+        button{
+          @extend %d-block;
+          margin: 2rem 8rem;
+          padding: 2rem 4rem;
+          border-radius: 50px;
+          transition: all .2s linear;
+          transform: translateY(0) rotate3d(8, 0, 0, 45deg);
+          &:hover{
+            box-shadow: 0 10px 0 0 rgba($color: #60cdd4, $alpha: .7);
+            transform: translateY(-10px) rotate3d(8, 0, 0, 45deg);
+          }
+          &:active{
+            transform: translateY(0) rotate3d(8, 0, 0, 45deg);
+            box-shadow: none;
+          }
+        }
+        .term{
+          width: 100%;
+          >label{
+            font-size: 20px;
+            color: var(--black);
+            display: inline-block;
+            &::first-letter{
+              text-transform: capitalize;
+            }
+            a{
+              display: inline;
+              color: inherit;
+              &:hover{
+                color: var(--blue);
+              }
+            }
+          }
+        }
+      }
+    }
     .signup{
       background-color: var(--blue);
-      @include flex(center, center);
+      z-index: 2;
       p{
         font-size: 20px;
         margin-bottom: 1.5rem;

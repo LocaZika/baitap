@@ -9,24 +9,24 @@
   --violet: #e354fa;
 }
 
-.container .signin .signin-form .signin-input, .container .signin .signin-form,
+.container .signin .signup-form .signup-input, .container .signin .signin-form .signin-input, .container .signin .signin-form, .container .signin .signup-form,
 .container .signin .signup, .container .signin, body {
   display: flex;
 }
 
-.container .signin .signin-form .socials .socials-icon {
+.container .signin .signup-form .signup-input .input-field > label, .container .signin .signin-form .socials .socials-icon {
   display: inline-block;
 }
 
-.container .signin .signin-form .signin-input button, .container .signin .signin-form .signin-input a {
+.container .signin .signup-form .signup-input button, .container .signin .signup-form .signup-input .input-field a, .container .signin .signin-form .signin-input button, .container .signin .signin-form .signin-input a {
   display: block;
 }
 
-.container .signin .signin-form .socials .socials-icon {
+.container .signin .signin-form .socials .socials-icon, .container .signin {
   position: relative;
 }
 
-.container .signin .signin-form .socials .socials-icon > i {
+.container .signin .signup-form, .container .signin .signin-form .socials .socials-icon > i {
   position: absolute;
 }
 
@@ -37,7 +37,8 @@ html {
 
 body {
   justify-content: center;
-  align-items: center;
+  align-items: space-between;
+  flex-direction: column;
   height: 100%;
   background-color: var(--gray);
 }
@@ -52,7 +53,7 @@ body {
   margin: 0 auto;
   box-shadow: 0 10px 10px 0 var(--gray-dark);
 }
-.container .signin .signin-form,
+.container .signin .signin-form, .container .signin .signup-form,
 .container .signin .signup {
   width: 50%;
   justify-content: center;
@@ -60,20 +61,20 @@ body {
   flex-direction: column;
   padding: 10rem;
 }
-.container .signin .signin-form h1,
+.container .signin .signin-form h1, .container .signin .signup-form h1,
 .container .signin .signup h1 {
   font-size: 30px;
   margin: 5rem 0 1.5rem 0;
 }
-.container .signin .signin-form h1::first-letter,
+.container .signin .signin-form h1::first-letter, .container .signin .signup-form h1::first-letter,
 .container .signin .signup h1::first-letter {
   text-transform: capitalize;
 }
-.container .signin .signin-form h1 span,
+.container .signin .signin-form h1 span, .container .signin .signup-form h1 span,
 .container .signin .signup h1 span {
   text-transform: uppercase;
 }
-.container .signin .signin-form button,
+.container .signin .signin-form button, .container .signin .signup-form button,
 .container .signin .signup button {
   font-size: 24px;
   text-transform: uppercase;
@@ -81,7 +82,7 @@ body {
   border: none;
   cursor: pointer;
 }
-.container .signin .signin-form button, .container .signin .signin-form p,
+.container .signin .signin-form button, .container .signin .signin-form p, .container .signin .signup-form button, .container .signin .signup-form p,
 .container .signin .signup button,
 .container .signin .signup p {
   color: var(--white);
@@ -166,10 +167,87 @@ body {
   transform: translateY(0) rotate3d(8, 0, 0, 45deg);
   box-shadow: none;
 }
+.container .signin .signup-form {
+  left: 50%;
+  height: 100%;
+  background-color: var(--white);
+  z-index: 0;
+  transition: transform 1.5s linear, left 1.5s, z-index 1.5s;
+}
+.container .signin .signup-form .signup-input {
+  margin: 2.5rem 0;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.container .signin .signup-form .signup-input .input-field > input, .container .signin .signup-form .signup-input .input-field label {
+  font-size: 24px;
+}
+.container .signin .signup-form .signup-input .input-field input {
+  border: none;
+  padding: 1rem;
+  background-color: var(--gray);
+  width: 100%;
+}
+.container .signin .signup-form .signup-input .input-field input:focus + label {
+  color: var(--black);
+  transform: translate(0, -7.75rem);
+}
+.container .signin .signup-form .signup-input .input-field > label {
+  transform: translate(2rem, -3.75rem);
+  color: var(--gray-dark);
+  transition: transform 0.2s linear, color 0.5s;
+  text-transform: capitalize;
+}
+.container .signin .signup-form .signup-input .input-field a {
+  font-size: 16px;
+  color: var(--gray-text);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.container .signin .signup-form .signup-input .input-field a:hover {
+  color: var(--blue);
+}
+.container .signin .signup-form .signup-input .input-field a::first-letter {
+  text-transform: capitalize;
+}
+.container .signin .signup-form .signup-input button {
+  margin: 2rem 8rem;
+  padding: 2rem 4rem;
+  border-radius: 50px;
+  transition: all 0.2s linear;
+  transform: translateY(0) rotate3d(8, 0, 0, 45deg);
+}
+.container .signin .signup-form .signup-input button:hover {
+  box-shadow: 0 10px 0 0 rgba(96, 205, 212, 0.7);
+  transform: translateY(-10px) rotate3d(8, 0, 0, 45deg);
+}
+.container .signin .signup-form .signup-input button:active {
+  transform: translateY(0) rotate3d(8, 0, 0, 45deg);
+  box-shadow: none;
+}
+.container .signin .signup-form .signup-input .term {
+  width: 100%;
+}
+.container .signin .signup-form .signup-input .term > label {
+  font-size: 20px;
+  color: var(--black);
+  display: inline-block;
+}
+.container .signin .signup-form .signup-input .term > label::first-letter {
+  text-transform: capitalize;
+}
+.container .signin .signup-form .signup-input .term > label a {
+  display: inline;
+  color: inherit;
+}
+.container .signin .signup-form .signup-input .term > label a:hover {
+  color: var(--blue);
+}
 .container .signin .signup {
   background-color: var(--blue);
-  justify-content: center;
-  align-items: center;
+  z-index: 2;
 }
 .container .signin .signup p {
   font-size: 20px;
