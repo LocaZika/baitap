@@ -5,6 +5,10 @@
   font-family: sans-serif;
   outline: none;
 }
+html,
+body {
+  height: 100%;
+}
 html {
   font-size: 62.5%;
 }

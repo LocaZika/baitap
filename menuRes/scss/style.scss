@@ -1,0 +1,163 @@
+@import '../../scss/param.scss';
+@import 'variable';
+/* PARAM */
+%bar-icon{
+  display: block;
+  @extend %pos-abs;
+  width: 100%;
+  height: .75rem;
+  border-radius: 25px;
+  background-color: var(--gray);
+}
+%bar-transf{
+  transition: transform 1s linear;
+}
+/* STYLE */
+body{
+  background-color: var(--black);
+  overflow-x: hidden;
+}
+nav{
+  width: 100%;
+  height: 7rem;
+  background-color: var(--blue);
+}
+.container{
+  @extend %pos-rel;
+  @include flex(space-between, center);
+  height: 100%;
+}
+.brand{
+  @extend %pos-abs;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  img{
+    width: 5rem;
+  }
+}
+.menu{
+  @extend %pos-rel;
+  width: 100%;
+  height: 100%;
+  >label{
+    @extend %d-block;
+    @extend %pos-abs;
+    display: block;
+    border: 2px solid black;
+    width: 7rem;
+    height: 100%;
+    top: 0;
+    left: calc(100% - 7rem);
+    z-index: 2;
+  }
+  .bar{
+    @extend %pos-abs;
+    display: block;
+    width: 7rem;
+    height: 100%;
+    top: 0;
+    left: calc(100% - 7rem);
+    padding: 0 1rem;
+    background-color: var(--blue);
+    border-radius: 50%;
+    transform: rotate(0);
+    transition: left 1s linear, transform 1s;
+    &-line{
+      position: relative;
+      &--top{
+        @extend %bar-icon;
+        transform: translateY(1rem);
+        @extend %bar-transf;
+      }
+      &--mid{
+        @extend %bar-icon;
+        transform: translateY(3rem);
+        opacity: 1;
+        transition: opacity 1s linear;
+      }
+      &--bottom{
+        @extend %bar-icon;
+        transform: translateY(5rem);
+        @extend %bar-transf;
+      }
+    }
+  }
+  #bar__cb {
+    display: none;
+    &:checked{
+      +label{
+        left: 0;
+      }
+  
+      ~ .bar > .bar-line > .bar-line--top {
+        transform: translateY(3rem) rotate(45deg);
+      }
+      ~ .bar > .bar-line > .bar-line--mid {
+        opacity: 0;
+      }
+    
+      ~ .bar > .bar-line > .bar-line--bottom {
+        transform: translateY(3rem) rotate(135deg);
+      }
+      ~.bar{
+        left: 0;
+        transform: rotate(360deg);
+      }
+      ~.navbar{
+        left: 7rem;
+      }
+    }
+  }
+  .navbar{
+    @extend %pos-abs;
+    display: block;
+    top: 0;
+    left: 100%;
+    background-color: var(--blue);
+    width: calc(100% - 7rem);
+    transition: left 1s linear;
+    li{
+      line-height: 4.5rem;
+      @extend %pos-rel;
+      padding: 1rem 0;
+      width: 100%;
+      text-align: center;
+      transition: transform .2s linear;
+      &:hover{
+        background-color: rgba($color: #fff, $alpha: .5);
+      }
+      ul{
+        @extend %pos-abs;
+        top: 0;
+        left: 0;
+      }
+    }
+    a{
+      font-size: 16px;
+      color: var(--white);
+      padding: 1rem 2rem;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu{
+    width: 60%;
+    left: 40%;
+    >label{
+      display: none;
+    }
+    .bar{
+      display: none;
+    }
+    .navbar{
+      display: flex;
+      top: 0;
+      left: 0;
+      width: 100%;
+      li{
+        width: unset;
+      }
+    }
+  }
+}
