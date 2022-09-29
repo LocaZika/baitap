@@ -1,163 +1,143 @@
 @import '../../scss/param.scss';
-@import 'variable';
+@import './variable.scss';
 /* PARAM */
-%bar-icon{
-  display: block;
-  @extend %pos-abs;
-  width: 100%;
-  height: .75rem;
-  border-radius: 25px;
-  background-color: var(--gray);
+%left-transition{
+  transition: left .5s linear;
 }
-%bar-transf{
-  transition: transform 1s linear;
+%transform-transition{
+  transition: transform .5s linear;
 }
-/* STYLE */
+/* SCSS */
 body{
-  background-color: var(--black);
-  overflow-x: hidden;
-}
-nav{
   width: 100%;
-  height: 7rem;
-  background-color: var(--blue);
+  height: 100vh;
+  background-color: var(--black);
+}
+.wrapper{
+  overflow-x: clip;
 }
 .container{
-  @extend %pos-rel;
-  @include flex(space-between, center);
-  height: 100%;
-}
-.brand{
-  @extend %pos-abs;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  img{
-    width: 5rem;
-  }
-}
-.menu{
-  @extend %pos-rel;
   width: 100%;
-  height: 100%;
-  >label{
-    @extend %d-block;
-    @extend %pos-abs;
-    display: block;
-    border: 2px solid black;
-    width: 7rem;
-    height: 100%;
-    top: 0;
-    left: calc(100% - 7rem);
-    z-index: 2;
-  }
-  .bar{
-    @extend %pos-abs;
-    display: block;
-    width: 7rem;
-    height: 100%;
-    top: 0;
-    left: calc(100% - 7rem);
-    padding: 0 1rem;
-    background-color: var(--blue);
-    border-radius: 50%;
-    transform: rotate(0);
-    transition: left 1s linear, transform 1s;
-    &-line{
-      position: relative;
-      &--top{
-        @extend %bar-icon;
-        transform: translateY(1rem);
-        @extend %bar-transf;
-      }
-      &--mid{
-        @extend %bar-icon;
-        transform: translateY(3rem);
-        opacity: 1;
-        transition: opacity 1s linear;
-      }
-      &--bottom{
-        @extend %bar-icon;
-        transform: translateY(5rem);
-        @extend %bar-transf;
-      }
+  background-color: var(--blue);
+  @include flex(space-between, center);
+  @extend %pos-rel;
+  .brand{
+    margin: 1rem;
+    img{
+      width: 3rem;
     }
   }
-  #bar__cb {
+  >input[type="checkbox"]{
     display: none;
+  }
+}
+.bar{
+  @extend %pos-abs;
+  @extend %d-inline;
+  top: 0;
+  left: calc(100% - 5rem);
+  width: 5rem;
+  height: 4rem;
+  background-color: var(--blue);
+  border-radius: 50%;
+  transform: rotate(0);
+  transition: left .5s linear, transform .5s;
+  >label{
+    @extend %pos-abs;
+    @extend %d-block;
+    width: 5rem;
+    height: 5rem;
+    z-index: 2;
+  }
+  &-line{
+    @extend %pos-abs;
+    padding: 0 1rem;
+    height: 100%;
+    width: 100%;
+    span{
+      @extend %d-block;
+      width: 100%;
+      height: .5rem;
+      background-color: var(--gray);
+      border-radius: 25rem;
+      margin: calc(5rem / 6) 0;
+    }
+    &--top{
+      @extend %transform-transition;
+    }
+    &--mid{
+      transition: opacity .5s;
+      opacity: 1;
+    }
+    &--bottom{
+      @extend %transform-transition;
+    }
+  }
+  &-cb{
     &:checked{
-      +label{
-        left: 0;
+      ~.bar .bar-line .bar-line--top{
+        transform: translateY(1.5rem) rotate(45deg);
       }
-  
-      ~ .bar > .bar-line > .bar-line--top {
-        transform: translateY(3rem) rotate(45deg);
-      }
-      ~ .bar > .bar-line > .bar-line--mid {
+      ~.bar .bar-line .bar-line--mid{
         opacity: 0;
       }
-    
-      ~ .bar > .bar-line > .bar-line--bottom {
-        transform: translateY(3rem) rotate(135deg);
+      ~.bar .bar-line .bar-line--bottom{
+        transform: translateY(-1.25rem) rotate(135deg);
       }
       ~.bar{
         left: 0;
         transform: rotate(360deg);
       }
-      ~.navbar{
-        left: 7rem;
+      ~.menu{
+        left: 5rem;
       }
     }
   }
+}
+.menu{
+  @extend %pos-abs;
+  top: 0;
+  left: 100%;
+  height: 100%;
+  width: 100%;
+  @extend %left-transition;
   .navbar{
-    @extend %pos-abs;
-    display: block;
-    top: 0;
-    left: 100%;
     background-color: var(--blue);
-    width: calc(100% - 7rem);
-    transition: left 1s linear;
+    width: calc(100% - 5rem);
     li{
-      line-height: 4.5rem;
-      @extend %pos-rel;
-      padding: 1rem 0;
       width: 100%;
+      background-color: var(--blue);
       text-align: center;
-      transition: transform .2s linear;
+      &::first-letter {
+          text-transform: uppercase;
+        }
+      a{
+        line-height: 5rem;
+        font-size: 16px;
+        color: var(--white);
+        padding: 1rem 2rem;
+      }
       &:hover{
         background-color: rgba($color: #fff, $alpha: .5);
+        a{
+          color: var(--black);
+        }
       }
-      ul{
-        @extend %pos-abs;
-        top: 0;
-        left: 0;
-      }
-    }
-    a{
-      font-size: 16px;
-      color: var(--white);
-      padding: 1rem 2rem;
     }
   }
 }
 @media screen and (min-width: 768px) {
+  .bar{
+    display: none;
+  }
   .menu{
-    width: 60%;
-    left: 40%;
-    >label{
-      display: none;
-    }
-    .bar{
-      display: none;
-    }
+    position: unset;
+    width: 50%;
     .navbar{
+      width: auto;
       display: flex;
-      top: 0;
-      left: 0;
-      width: 100%;
-      li{
-        width: unset;
-      }
+      justify-content: space-around;
+      align-items: center;
     }
   }
 }
