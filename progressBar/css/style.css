@@ -37,7 +37,7 @@ body {
 }
 
 :root {
-  --topWave: 50%;
+  --topWave: 0%;
 }
 
 .container {
@@ -61,14 +61,14 @@ body {
   display: inline-block;
 }
 .container #circle1 {
-  background-image: radial-gradient(var(--white) 0 60px, transparent 60px), conic-gradient(var(--violet) 0 70%, var(--white) 70%);
+  background-image: radial-gradient(var(--white) 0 60px, transparent 60px), conic-gradient(var(--violet) 0 0%, var(--white) 0%);
 }
 .container #circle2 {
   background-color: var(--black);
-  background-image: radial-gradient(var(--white) 0 60px, transparent 60px), repeating-conic-gradient(var(--white) 0 1%, transparent 1% 5%), repeating-conic-gradient(var(--white) 0 1%, transparent 1.2% 5%), repeating-conic-gradient(transparent 0 70%, var(--gray) 70% 100%);
+  background-image: radial-gradient(var(--white) 0 60px, transparent 60px), repeating-conic-gradient(var(--white) 0 1%, transparent 1% 5%), repeating-conic-gradient(var(--white) 0 1%, transparent 1.2% 5%), repeating-conic-gradient(transparent 0 0%, var(--gray) 0% 100%);
 }
 .container #circle3 {
-  background-image: radial-gradient(var(--white) 0 60px, transparent 60px), conic-gradient(var(--violet) 0 70%, var(--white) 70%);
+  background-image: radial-gradient(var(--white) 0 60px, transparent 60px), conic-gradient(var(--violet) 0 0%, var(--white) 0%);
 }
 .container #circle3::before, .container #circle3::after {
   content: " ";
