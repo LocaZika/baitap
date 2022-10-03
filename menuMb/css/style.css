@@ -3,11 +3,16 @@
   display: block;
 }
 
-.navbar .menu li, .navbar .toggle {
+.navbar .menu li,
+.navbar .toggle {
   position: relative;
 }
 
-.navbar, .navbar .toggle.open::after, .navbar .toggle.open::before, .navbar .toggle::after, .navbar .toggle::before {
+.navbar,
+.navbar .toggle.open::after,
+.navbar .toggle.open::before,
+.navbar .toggle::after,
+.navbar .toggle::before {
   position: absolute;
 }
 
@@ -26,7 +31,8 @@
   --navbar-af-rotate3D: 1;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
 }
@@ -35,11 +41,17 @@ body {
   background-image: linear-gradient(135deg, var(--pink), var(--blue-dark));
 }
 
-.navbar .toggle.open::after, .navbar .toggle.open::before, .navbar .toggle::after, .navbar .toggle::before {
+.navbar .toggle.open::after,
+.navbar .toggle.open::before,
+.navbar .toggle::after,
+.navbar .toggle::before {
   content: " ";
 }
 
-.navbar .toggle.open::after, .navbar .toggle.open::before, .navbar .toggle::after, .navbar .toggle::before {
+.navbar .toggle.open::after,
+.navbar .toggle.open::before,
+.navbar .toggle::after,
+.navbar .toggle::before {
   width: 100%;
   height: 0.5rem;
   background-color: var(--pink);
@@ -140,7 +152,7 @@ header .brand a {
   color: var(--pink);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .navbar .toggle {
     display: none;
   }
