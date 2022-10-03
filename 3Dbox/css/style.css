@@ -1,0 +1,109 @@
+.container .cube div, body {
+  display: flex;
+}
+
+.container .cube div span {
+  display: inline-block;
+}
+
+.container .cube div span, .container .cube, .container {
+  position: relative;
+}
+
+.container .cube div, .container .cube div span::after, .container .cube div span::before {
+  position: absolute;
+}
+
+:root {
+  --blue-dark: #2c3e50;
+  --white: #ecf0f1;
+  --white-dark: #dde1e2;
+  --red: #e74c3c;
+  --red-af: #e05242;
+  --red-bf: #e96455;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue-dark);
+}
+
+.container .cube div span:hover::after, .container .cube div span:hover::before, .container .cube div span:hover {
+  transition: 0s;
+}
+
+.container .cube div span::after, .container .cube div span::before, .container .cube div span {
+  transition: 1.5s;
+}
+
+.container .cube div span::after, .container .cube div span::before {
+  content: " ";
+}
+
+.container {
+  transform: skewY(340deg);
+  top: -8rem;
+  animation: bg-clr 1s linear infinite;
+}
+@keyframes bg-clr {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+.container .cube {
+  z-index: 2;
+}
+.container .cube:nth-child(2) {
+  translate: 6rem 6rem;
+  z-index: 3;
+}
+.container .cube:nth-child(3) {
+  translate: -6rem -6rem;
+  z-index: 1;
+}
+.container .cube div {
+  flex-direction: column;
+  gap: 3rem;
+  translate: calc(var(--x) * 8rem) calc(var(--y) * 8rem);
+}
+.container .cube div span {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--white);
+  z-index: calc(var(--i) * 1);
+}
+.container .cube div span:hover {
+  background-color: var(--red);
+  filter: drop-shadow(0 0 3rem var(--red));
+}
+.container .cube div span:hover::before {
+  background-color: var(--red-bf);
+}
+.container .cube div span:hover::after {
+  background-color: var(--red-af);
+}
+.container .cube div span::before {
+  left: -3.9rem;
+  width: 4rem;
+  height: 100%;
+  transform-origin: right;
+  transform: skewY(45deg);
+  background-color: var(--white);
+}
+.container .cube div span::after {
+  top: -3.9rem;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  transform-origin: bottom;
+  transform: skewX(45deg);
+  background-color: var(--white-dark);
+}
+
+/*# sourceMappingURL=style.css.map */

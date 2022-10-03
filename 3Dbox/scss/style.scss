@@ -1,0 +1,95 @@
+@import '../../scss/param.scss';
+@import 'variable';
+
+body{
+  height: 100vh;
+  width: 100%;
+  @include flex(center, center);
+  background-color: var(--blue-dark);
+}
+%transition-0{
+  transition: 0s;
+}
+%transition-1-5s{
+  transition: 1.5s;
+}
+%pseudo-config{
+  content: ' ';
+  @extend %pos-abs;
+}
+.container{
+  @extend %pos-rel;
+  transform: skewY(340deg);
+  top: -8rem;
+  animation: bg-clr 1s linear infinite;
+  @keyframes bg-clr {
+    from{
+      filter: hue-rotate(0deg);
+    }
+    to{
+      filter: hue-rotate(360deg);
+    }
+  }
+  .cube{
+    @extend %pos-rel;
+    z-index: 2;
+    &:nth-child(2){
+      translate: 6rem 6rem;
+      z-index: 3;
+    }
+    &:nth-child(3){
+      translate: -6rem -6rem;
+      z-index: 1;
+    }
+    div {
+      @extend %pos-abs;
+      @extend %d-flex;
+      flex-direction: column;
+      gap: 3rem;
+      translate: calc(var(--x) * 8rem) calc(var(--y) * 8rem);
+      span{
+        @extend %pos-rel;
+        width: 5rem;
+        height: 5rem;
+        background-color: var(--white);
+        @extend %d-inline;
+        z-index: calc(var(--i) * 1);
+        @extend %transition-1-5s;
+        &:hover{
+          background-color: var(--red);
+          filter: drop-shadow(0 0 3rem var(--red));
+          @extend %transition-0;
+          &::before{
+            background-color: var(--red-bf);
+            @extend %transition-0;
+          }
+          &::after{
+            background-color: var(--red-af);
+              @extend %transition-0;
+          }
+        }
+        &::before{
+          @extend %pseudo-config;
+          left: -3.9rem;
+          width: 4rem;
+          height: 100%;
+          transform-origin: right;
+          transform: skewY(45deg);
+          @extend %transition-1-5s;
+          background-color: var(--white);
+        }
+        &::after{
+          @extend %pseudo-config;
+          top: -3.9rem;
+          left: 0;
+          width: 100%;
+          height: 4rem;
+          transform-origin: bottom;
+          transform: skewX(45deg);
+          @extend %transition-1-5s;
+          background-color: var(--white-dark);
+        }
+      }
+    }
+  }
+}

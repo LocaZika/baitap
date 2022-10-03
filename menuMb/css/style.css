@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+.navbar .menu li a {
+  display: block;
+}
+
+.navbar .menu li, .navbar .toggle {
+  position: relative;
+}
+
+.navbar, .navbar .toggle.open::after, .navbar .toggle.open::before, .navbar .toggle::after, .navbar .toggle::before {
+  position: absolute;
+}
+
+:root {
+  --black: #2d3436;
+  --white: #ecf0f1;
+  --gray: #b2bec3;
+  --green: #2ecc71;
+  --blue: #0abde3;
+  --pink: #e84393;
+  --blue-dark: #0984e3;
+  --orange: #ff9f43;
+  --yellow: #f9ca24;
+  --red: #eb4d4b;
+  --navbar-bf-rotate3D: 1;
+  --navbar-af-rotate3D: 1;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(135deg, var(--pink), var(--blue-dark));
+}
+
+.navbar .toggle.open::after, .navbar .toggle.open::before, .navbar .toggle::after, .navbar .toggle::before {
+  content: " ";
+}
+
+.navbar .toggle.open::after, .navbar .toggle.open::before, .navbar .toggle::after, .navbar .toggle::before {
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--pink);
+  transition: 1s;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+}
+
+/*===HEADER===*/
+header {
+  background-color: rgba(116, 221, 87, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1px);
+  position: fixed;
+  padding: 1rem;
+}
+header .brand {
+  width: 50%;
+}
+header .brand a {
+  background-image: linear-gradient(45deg, var(--orange) 30%, var(--blue) 70%);
+  padding: 1rem;
+  -webkit-background-clip: text;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Dancing Script";
+  color: transparent;
+  text-transform: capitalize;
+}
+
+/*===NAVBAR===*/
+.navbar {
+  padding: 1rem;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+}
+.navbar .toggle {
+  display: block;
+  height: 100%;
+  width: 5rem;
+  margin-bottom: 1rem;
+  top: 0;
+  left: calc(100% - 5rem);
+  transition: rotate 1s;
+}
+.navbar .toggle::before {
+  top: 1rem;
+}
+.navbar .toggle::after {
+  bottom: 1rem;
+}
+.navbar .toggle.open {
+  rotate: 360deg;
+}
+.navbar .toggle.open::before {
+  top: 2rem;
+  rotate: 135deg;
+}
+.navbar .toggle.open::after {
+  bottom: 1.75rem;
+  rotate: 225deg;
+}
+.navbar .toggle.open ~ .menu li {
+  translate: 0 0;
+  opacity: 1;
+  visibility: visible;
+}
+.navbar .menu {
+  height: auto;
+  width: 100%;
+}
+.navbar .menu li {
+  width: 100%;
+  background-color: var(--white);
+  translate: -50rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: translate 0.5s, opacity 0.5s, visibility 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+}
+.navbar .menu li a {
+  padding: 1rem;
+  font-family: "Dancing Script", cursive;
+  font-size: 24px;
+  color: var(--black);
+  transition: 0.5s;
+}
+.navbar .menu li a::first-letter {
+  text-transform: uppercase;
+}
+.navbar .menu li a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--pink);
+}
+
+@media screen and (min-width: 768px) {
+  .navbar .toggle {
+    display: none;
+  }
+  .navbar .menu {
+    display: flex;
+  }
+  .navbar .menu.leftToRight li::before {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.5rem;
+    width: 100%;
+    background-color: var(--pink);
+    transform-origin: left;
+    rotate: 0 1 0 90deg;
+    transition: rotate 0.5s, opacity 0s;
+  }
+  .navbar .menu.leftToRight li:hover::before {
+    rotate: 0 var(--navbar-bf-rotate3D) 0 90deg;
+  }
+  .navbar .menu.leftToRight li:hover::after {
+    rotate: 0 --navbar-af-rotate3D 0 90deg;
+  }
+  .navbar .menu.rightToLeft li::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.5rem;
+    width: 100%;
+    background-color: var(--pink);
+    transform-origin: right;
+    rotate: 0 1 0 90deg;
+    transition: rotate 0.5s, opacity 0s;
+  }
+  .navbar .menu.rightToLeft li:hover::after {
+    rotate: 0 --navbar-af-rotate3D 0 90deg;
+  }
+  .navbar .menu li {
+    width: 100%;
+    background-color: transparent;
+    translate: 0 0;
+    opacity: 1;
+    visibility: visible;
+    text-align: center;
+  }
+  .navbar .menu li a {
+    color: var(--white);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

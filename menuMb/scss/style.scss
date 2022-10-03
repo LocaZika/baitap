@@ -1,0 +1,192 @@
+@import '../../scss/param.scss';
+@import 'variable';
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+body{
+  background-image: linear-gradient(135deg, var(--pink), var(--blue-dark));
+}
+%pseudo-init{
+  content: ' ';
+  @extend %pos-abs;
+}
+%pseudo-navbar{
+  @extend %pseudo-init;
+  width: 100%;
+  height: .5rem;
+  background-color: var(--pink);
+  transition: 1s;
+}
+.container{
+  width: 100%;
+  height: auto;
+}
+/*===HEADER===*/
+header{
+  background-color: rgba($color: #74DD5721, $alpha: .2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1px);
+  position: fixed;
+  padding: 1rem;
+  .brand{
+    width: 50%;
+    a{
+      background-image: linear-gradient(
+        45deg,
+        var(--orange) 30%,
+        var(--blue) 70%) ;
+      padding: 1rem;
+      -webkit-background-clip: text;
+      font-size: 36px;
+      font-weight: 700;
+      font-family: 'Dancing Script';
+      color: transparent;
+      text-transform: capitalize;
+    }
+  }
+}
+/*===NAVBAR===*/
+.navbar{
+  padding: 1rem;
+  @extend %pos-abs;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  .toggle{
+    display: block;
+    height: 100%;
+    width: 5rem;
+    margin-bottom: 1rem;
+    top: 0;
+    left: calc(100% - 5rem);
+    @extend %pos-rel;
+    transition: rotate 1s;
+    &::before{
+      @extend %pseudo-navbar;
+      top: 1rem;
+    }
+    &::after{
+      @extend %pseudo-navbar;
+      bottom: 1rem;
+    }
+    &.open{
+      rotate: 360deg;
+      &::before {
+        @extend %pseudo-navbar;
+        top: 2rem;
+        rotate: 135deg;
+      }
+    
+      &::after {
+        @extend %pseudo-navbar;
+        bottom: 1.75rem;
+        rotate: 225deg;
+      }
+      ~ .menu li{
+        translate: 0 0;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  .menu{
+    height: auto;
+    width: 100%;
+    li{
+      @extend %pos-rel;
+      width: 100%;
+      background-color: var(--white);
+      translate: -50rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: translate .5s, opacity .5s, visibility .5s;
+      transition-delay: calc(.1s * var(--i));
+      a{
+        @extend %d-block;
+        padding: 1rem;
+        font-family: 'Dancing Script', cursive;
+        font-size: 24px;
+        color: var(--black);
+        transition: .5s;
+        &::first-letter{
+          text-transform: uppercase;
+        }
+        &:hover{
+            background-color: rgba($color: #000000, $alpha: .1);
+            color: var(--pink);
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .navbar{
+    .toggle{
+      display: none;
+    }
+    .menu{
+      display: flex;
+      &.leftToRight{
+        li{
+          &::before{
+            content: ' ';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: .5rem;
+            width: 100%;
+            background-color: var(--pink);
+            transform-origin: left;
+            rotate: 0 1 0 90deg;
+            transition: rotate .5s, opacity 0s;
+          }
+          &:hover {
+            &::before {
+              rotate: 0 var(--navbar-bf-rotate3D) 0 90deg;
+            }
+  
+            &::after {
+              rotate: 0 --navbar-af-rotate3D 0 90deg;
+            }
+          }
+        }
+      }
+      &.rightToLeft{
+        li{
+          &::after{
+            content: ' ';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: .5rem;
+            width: 100%;
+            background-color: var(--pink);
+            transform-origin: right;
+            rotate: 0 1 0 90deg;
+            transition: rotate .5s, opacity 0s;
+          }
+          &:hover{
+            &::after{
+              rotate: 0 --navbar-af-rotate3D 0 90deg;
+            }
+          }
+        }
+      }
+      li{
+        width: 100%;
+        background-color: transparent;
+        translate: 0 0;
+        opacity: 1;
+        visibility: visible;
+        text-align: center;
+        a{
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
