@@ -101,13 +101,16 @@ body{
   height: 100%;
   width: 100%;
   @extend %left-transition;
-  .navbar{
+  ul{
     background-color: var(--blue);
+  }
+  .navbar{
     width: calc(100% - 5rem);
     li{
+      @extend %pos-rel;
       width: 100%;
-      background-color: var(--blue);
       text-align: center;
+      z-index: 9999;
       &::first-letter {
           text-transform: uppercase;
         }
@@ -120,8 +123,23 @@ body{
       &:hover{
         background-color: rgba($color: #fff, $alpha: .5);
         a{
-          color: var(--black);
+          color: var(--white);
         }
+        ul{
+          max-height: 100rem;
+          display: block
+        }
+      }
+      ul{
+        @extend %pos-abs;
+        // display: none;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        max-height: 0rem;
+        transition: max-height 1s;
+        overflow-y: hidden;
+        background-color: var(--black);
       }
     }
   }
@@ -138,6 +156,22 @@ body{
       display: flex;
       justify-content: space-around;
       align-items: center;
+      li{
+        &:hover{
+          ul{
+            // display: unset;
+          }
+        }
+        ul{
+          // display: unset;
+          // overflow-y: unset;
+          // left: 0;
+          background-color: var(--blue);
+          li{
+            background-color: transparent;
+          }
+        }
+      }
     }
   }
 }
