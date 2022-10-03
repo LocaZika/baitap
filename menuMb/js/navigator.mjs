@@ -1,5 +1,5 @@
 import htmlTag from "./htmlTag.mjs";
-const navArray = ["home", "services", "blog", "about me", "contact"];
+const navArray = ["home", "services", "about me", "contact"];
 /*===BRANCH===*/
 const logo = htmlTag.aTag("#", "zika");
 const brand = htmlTag.divTag("", "brand", logo);

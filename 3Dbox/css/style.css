@@ -1,4 +1,5 @@
-.container .cube div, body {
+.container .cube div,
+body {
   display: flex;
 }
 
@@ -6,11 +7,15 @@
   display: inline-block;
 }
 
-.container .cube div span, .container .cube, .container {
+.container .cube div span,
+.container .cube,
+.container {
   position: relative;
 }
 
-.container .cube div, .container .cube div span::after, .container .cube div span::before {
+.container .cube div,
+.container .cube div span::after,
+.container .cube div span::before {
   position: absolute;
 }
 
@@ -31,21 +36,28 @@ body {
   background-color: var(--blue-dark);
 }
 
-.container .cube div span:hover::after, .container .cube div span:hover::before, .container .cube div span:hover {
+.container .cube div span:hover::after,
+.container .cube div span:hover::before,
+.container .cube div span:hover {
   transition: 0s;
 }
 
-.container .cube div span::after, .container .cube div span::before, .container .cube div span {
+.container .cube div span::after,
+.container .cube div span::before,
+.container .cube div span {
   transition: 1.5s;
 }
 
-.container .cube div span::after, .container .cube div span::before {
+.container .cube div span::after,
+.container .cube div span::before {
   content: " ";
 }
 
 .container {
   transform: skewY(340deg);
   top: -8rem;
+}
+.container:hover {
   animation: bg-clr 1s linear infinite;
 }
 @keyframes bg-clr {

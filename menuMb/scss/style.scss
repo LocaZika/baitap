@@ -150,7 +150,7 @@ header{
             }
   
             &::after {
-              rotate: 0 --navbar-af-rotate3D 0 90deg;
+              rotate: 0 var(--navbar-af-rotate3D) 0 90deg;
             }
           }
         }

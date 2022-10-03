@@ -4,10 +4,11 @@ let currentX = "",
   mouseX = (e) => {
     oldX > e.pageX ? (currentX = "left") : (currentX = "right");
     oldX = e.pageX;
+    console.log(currentX);
     return currentX;
   };
-const mouseXEvent = (moveLeftEvent, moveRightEvent) => {
-  let mousemove = mouseX();
+const mouseXEvent = (element, moveLeftEvent, moveRightEvent) => {
+  let mousemove = mouseX(element);
   mousemove == "left" ? moveLeftEvent : moveRightEvent;
 };
 export default { mouseXEvent };
