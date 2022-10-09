@@ -1,0 +1,122 @@
+@import "../../scss/param.scss";
+
+:root{
+  --purple: #451549;
+}
+body{
+  background: var(--purple) url("../img/background.jpg") repeat;
+}
+%purple-bg{
+  border: 1px solid;
+  border-image: linear-gradient(0deg, #67466a, #936a96) 1;
+  background-image: linear-gradient(0deg, rgba($color: #000000, $alpha: .186), rgba($color: #000000, $alpha: 0));
+  background-color: #7b537e;
+}
+.container{
+  @include flex(center, center);
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba($color: #ffffff, $alpha: .21), rgba($color: #000000, $alpha: .21));
+  .form{
+    width: 40rem;
+    height: 30rem;
+    .titlebar{
+      @include flex(space-between, center);
+      height: 6.3rem;
+      padding: 2.2rem ;
+      @extend %purple-bg;
+      h1{
+        text-transform: capitalize;
+        font-size: 14pt;
+        color: #fff;
+        text-shadow: .1rem .1rem rgba($color: #351038, $alpha: .5);
+      }
+      button{
+        padding: 1.5rem;
+        background: transparent url("../img/close-icon.png") no-repeat center;
+        border: none;
+      }
+    }
+    form{
+      @extend %pos-rel;
+      padding: .3rem 2.2rem 2.3rem;
+      background-color: #f2f2f2;
+      border: .1rem solid #ffffff;
+      &::before, &::after{
+        content: ' ';
+        @extend %pos-abs;
+        bottom: -.5rem;
+        background-image: linear-gradient(90deg, #000000, rgba($color: #000000, $alpha: 0));
+        box-shadow: inset 0 0 .3rem 0 rgba($color: #000000, $alpha: .03);
+        border: #351038;
+        width: 50%;
+        height: 3.8rem;
+        transform: skew(-2deg, 0);
+        transform-origin: top;
+        border-radius: .5rem;
+        z-index: -1;
+      }
+      &::before{
+        left: 0;
+      }
+      &::after{
+        right: 0;
+        rotate: 0 1 0 180deg;
+      }
+      .input-field{
+        @extend %pos-rel;
+        &::before, &::after{
+          content: ' ';
+          @extend %pos-abs;
+          width: 1.5rem;
+          height: 1.5rem;
+          right: 1.8rem;
+        }
+        &::before{
+          top: 30%;
+          translate: 0 -40%;
+          background-image: url(../img/user-icon.png);
+        }
+        &::after{
+          bottom: 20%;
+          translate: 0 65%;
+          background-image: url(../img/lock-icon.png);
+        }
+      }
+      input, button{
+        margin-top: 2rem;
+      }
+      input{
+        width: 100%;
+        padding: 2.2rem;
+        background-color: #f0eef0;
+        border: .1rem solid rgba($color: #dcdcdc, $alpha: .86);
+        border-radius: .3rem;
+        box-shadow: 0 0 .2rem 0 #ffffff;
+        &::placeholder{
+          color: #999999;
+          font-size: 1.2rem;
+          text-transform: capitalize;
+        }
+      }
+      button{
+        padding: 1.5rem 3rem;
+        margin-bottom: 1rem;
+        background-color: #7b537e;
+        border: 1px solid;
+        border-image: linear-gradient(0deg, #67466a, #936a96);
+        color: #ffffff;
+        text-shadow: .1rem .1rem rgba($color: #351038, $alpha: .5);
+        text-transform: capitalize;
+        font-size: 1.2rem;
+        @extend %purple-bg;
+      }
+      a{
+        color: #999999;
+        text-transform: capitalize;
+        margin-left: 3rem;
+        text-shadow: .1rem .1rem rgba($color: #ffffff, $alpha: .75);
+      }
+    }
+  }
+}

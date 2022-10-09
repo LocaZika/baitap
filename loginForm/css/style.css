@@ -1,0 +1,131 @@
+.container .form .titlebar, .container {
+  display: flex;
+}
+
+.container .form form .input-field, .container .form form {
+  position: relative;
+}
+
+.container .form form .input-field::before, .container .form form .input-field::after, .container .form form::before, .container .form form::after {
+  position: absolute;
+}
+
+:root {
+  --purple: #451549;
+}
+
+body {
+  background: var(--purple) url("../img/background.jpg") repeat;
+}
+
+.container .form form button, .container .form .titlebar {
+  border: 1px solid;
+  border-image: linear-gradient(0deg, #67466a, #936a96) 1;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.186), rgba(0, 0, 0, 0));
+  background-color: #7b537e;
+}
+
+.container {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.21), rgba(0, 0, 0, 0.21));
+}
+.container .form {
+  width: 40rem;
+  height: 30rem;
+}
+.container .form .titlebar {
+  justify-content: space-between;
+  align-items: center;
+  height: 6.3rem;
+  padding: 2.2rem;
+}
+.container .form .titlebar h1 {
+  text-transform: capitalize;
+  font-size: 14pt;
+  color: #fff;
+  text-shadow: 0.1rem 0.1rem rgba(53, 16, 56, 0.5);
+}
+.container .form .titlebar button {
+  padding: 1.5rem;
+  background: transparent url("../img/close-icon.png") no-repeat center;
+  border: none;
+}
+.container .form form {
+  padding: 0.3rem 2.2rem 2.3rem;
+  background-color: #f2f2f2;
+  border: 0.1rem solid #ffffff;
+}
+.container .form form::before, .container .form form::after {
+  content: " ";
+  bottom: -0.5rem;
+  background-image: linear-gradient(90deg, #000000, rgba(0, 0, 0, 0));
+  box-shadow: inset 0 0 0.3rem 0 rgba(0, 0, 0, 0.03);
+  border: #351038;
+  width: 50%;
+  height: 3.8rem;
+  transform: skew(-2deg, 0);
+  transform-origin: top;
+  border-radius: 0.5rem;
+  z-index: -1;
+}
+.container .form form::before {
+  left: 0;
+}
+.container .form form::after {
+  right: 0;
+  rotate: 0 1 0 180deg;
+}
+.container .form form .input-field::before, .container .form form .input-field::after {
+  content: " ";
+  width: 1.5rem;
+  height: 1.5rem;
+  right: 1.8rem;
+}
+.container .form form .input-field::before {
+  top: 30%;
+  translate: 0 -40%;
+  background-image: url(../img/user-icon.png);
+}
+.container .form form .input-field::after {
+  bottom: 20%;
+  translate: 0 65%;
+  background-image: url(../img/lock-icon.png);
+}
+.container .form form input, .container .form form button {
+  margin-top: 2rem;
+}
+.container .form form input {
+  width: 100%;
+  padding: 2.2rem;
+  background-color: #f0eef0;
+  border: 0.1rem solid rgba(220, 220, 220, 0.86);
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0.2rem 0 #ffffff;
+}
+.container .form form input::placeholder {
+  color: #999999;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+.container .form form button {
+  padding: 1.5rem 3rem;
+  margin-bottom: 1rem;
+  background-color: #7b537e;
+  border: 1px solid;
+  border-image: linear-gradient(0deg, #67466a, #936a96);
+  color: #ffffff;
+  text-shadow: 0.1rem 0.1rem rgba(53, 16, 56, 0.5);
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+.container .form form a {
+  color: #999999;
+  text-transform: capitalize;
+  margin-left: 3rem;
+  text-shadow: 0.1rem 0.1rem rgba(255, 255, 255, 0.75);
+}
+
+/*# sourceMappingURL=style.css.map */
