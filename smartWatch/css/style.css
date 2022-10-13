@@ -1,0 +1,437 @@
+.cta .email, .faq .questions-grp .question .title, .screenshots .scs-img, .testimonial .feedback-grp .feedback .control-comment, .center, .navbar .header-right, .navbar .header-left, .navbar {
+  display: flex;
+}
+
+.faq .questions-grp, .testimonial .feedback-grp .feedback .control-comment > div, .hiw-steps div h2 > span, .navbar a {
+  display: inline-block;
+}
+
+.cta, .faq .questions-grp, .screenshots .scs-img, .screenshots, .testimonial .feedback-grp, .hiw-video button, header {
+  position: relative;
+}
+
+.screenshots .scs-control, .testimonial .feedback-grp > i, #bg, .cta::after, .cta::before {
+  position: absolute;
+}
+
+.cta::after, .cta::before {
+  height: 100%;
+}
+
+.screenshots .scs-img, #bg {
+  top: 0;
+  left: 0;
+}
+
+.cta::after, .cta::before {
+  content: " ";
+}
+
+.cta::after, .cta::before {
+  width: 68rem;
+}
+
+:root {
+  --blue: #2186eb;
+  --blue-deep: #334e68;
+  --gray: #627d98;
+  --white: #ffffff;
+  --dl-pseudo: 100%;
+}
+
+body {
+  scrollbar-width: 0;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  width: 100%;
+}
+
+span {
+  color: var(--blue);
+}
+
+#bg {
+  background-image: linear-gradient(0deg, white, #f4f2f9);
+  z-index: -1;
+}
+
+header {
+  padding: 1.8rem 1.5rem;
+  background: #f4f2f9 url(../img/header-bg.jpg) no-repeat center/cover;
+  mix-blend-mode: darken;
+}
+
+.navbar {
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar a {
+  color: var(--white);
+  font-size: 1.6rem;
+  padding: 1.5rem 6rem;
+  margin: 0 0.25rem;
+  border: 0.2rem solid transparent;
+  border-radius: 2.5rem;
+}
+.navbar a::first-letter {
+  text-transform: capitalize;
+}
+.navbar a:hover {
+  border-color: var(--white);
+}
+.navbar > a {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.navbar .header-left {
+  flex: 1 1 50%;
+  justify-content: flex-start;
+  align-items: center;
+}
+.navbar .header-left a:nth-child(2) {
+  text-transform: uppercase;
+}
+.navbar .header-right {
+  flex: 1 1 50%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 11.5rem;
+}
+.hero h1 {
+  color: var(--white);
+  font-size: 6.6rem;
+  text-transform: capitalize;
+}
+.hero img {
+  margin-top: 6rem;
+}
+
+main {
+  padding-top: 4rem;
+}
+main h1, main span {
+  font-size: 4.8rem;
+}
+main h1::first-letter, main span::first-letter {
+  text-transform: uppercase;
+}
+main p {
+  color: var(--gray);
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.hiw {
+  flex-direction: column;
+  background: var(--white) url(../img/Wave.png) no-repeat right bottom;
+  mix-blend-mode: multiply;
+}
+.hiw-steps div {
+  display: inline-block;
+  padding: 9.5rem 4.5rem 4.5rem;
+  width: 37.8rem;
+  height: 31.8rem;
+  border-radius: 2.5rem;
+}
+.hiw-steps div:hover {
+  background-color: var(--white);
+  box-shadow: 0 1.5rem 3.5rem 0 rgba(51, 78, 104, 0.1);
+}
+.hiw-steps div h2, .hiw-steps div span {
+  font-size: 2.4rem;
+}
+.hiw-steps div h2 {
+  color: var(--blue-deep);
+  line-height: 3.95rem;
+}
+.hiw-steps div h2 > span {
+  color: var(--blue);
+}
+.hiw-steps div h2 > span::first-letter {
+  text-transform: uppercase;
+}
+.hiw-steps div p {
+  line-height: 2.8rem;
+  font-size: 1.6rem;
+}
+.hiw-title {
+  margin-top: 14rem;
+  text-align: center;
+  width: 67rem;
+}
+.hiw-title h2::first-letter {
+  text-transform: uppercase;
+}
+.hiw-title p {
+  font-size: 1.8rem;
+  line-height: 3rem;
+  margin-top: 3rem;
+}
+.hiw-video {
+  margin-top: 6.5rem;
+  width: 97rem;
+  height: 55rem;
+  background-image: url(../img/video-bg.png);
+  border-radius: 2.5rem;
+  box-shadow: 0 1.5rem 3.5rem 0 rgba(33, 134, 235, 0.75);
+}
+.hiw-video button {
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 7.813rem;
+  width: 7.6rem;
+  height: 7.6rem;
+  border: none;
+  background-color: var(--blue);
+  transition: box-shadow 0.5s linear;
+  box-shadow: 0 0 0 0 #7cc4fa, 0 0 0 0 #47a3f3;
+}
+.hiw-video button:hover {
+  box-shadow: 0 0 0 1.4rem #7cc4fa, 0 0 0 2.8rem #47a3f3;
+}
+
+.testimonial {
+  text-align: center;
+  margin-top: 19rem;
+  padding: 0 39rem;
+  background: var(--white) url(../img/Wave-testi.png) no-repeat left bottom;
+}
+.testimonial h1 {
+  margin-bottom: 6rem;
+}
+.testimonial .feedback-grp .person {
+  width: 45%;
+}
+.testimonial .feedback-grp .person > img {
+  width: 40rem;
+}
+.testimonial .feedback-grp > i {
+  top: 25%;
+  left: 45%;
+  translate: -45% -25%;
+  font-size: 3.6rem;
+  color: var(--blue);
+}
+.testimonial .feedback-grp .feedback {
+  width: 55%;
+  margin-left: 8rem;
+  text-align: left;
+}
+.testimonial .feedback-grp .feedback p {
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+.testimonial .feedback-grp .feedback > img {
+  translate: -6rem 2rem;
+}
+.testimonial .feedback-grp .feedback .comment {
+  margin-bottom: 4rem;
+}
+.testimonial .feedback-grp .feedback .control-comment {
+  justify-content: space-between;
+  align-items: center;
+}
+.testimonial .feedback-grp .feedback .control-comment .person-name h3 {
+  font-size: 2.4rem;
+  color: var(--blue);
+  text-transform: capitalize;
+  line-height: 3.6rem;
+}
+.testimonial .feedback-grp .feedback .control-comment .person-name p {
+  line-height: 2.65rem;
+}
+.testimonial .feedback-grp .feedback .control-comment .control button {
+  font-size: 2rem;
+  line-height: 3.2rem;
+  color: #d9e2ec;
+  padding: 1.5rem;
+  background-color: transparent;
+  border: none;
+}
+.testimonial .feedback-grp .feedback .control-comment .control button:hover {
+  color: var(--blue);
+}
+
+.screenshots {
+  margin-top: 16rem;
+  text-align: center;
+  transition: 1s;
+}
+.screenshots h1 {
+  line-height: 8.865rem;
+  margin-bottom: 6.8rem;
+}
+.screenshots .scs-img {
+  justify-content: center;
+  align-items: center;
+  height: 62rem;
+}
+.screenshots .scs-img img {
+  margin: 2.5rem;
+  box-shadow: 0 1.5rem 3.5rem 0 rgba(51, 78, 104, 0.25);
+  border-radius: 2.5rem;
+}
+.screenshots .scs-img label {
+  top: 0;
+}
+.screenshots .scs-img .opacity1 {
+  opacity: 1;
+}
+.screenshots .scs-img .opacity50 {
+  opacity: 0.5;
+}
+.screenshots .scs-img .opacity75 {
+  opacity: 0.75;
+}
+.screenshots .scs-control {
+  top: 100%;
+  left: 50%;
+  translate: -50% 0;
+  margin-top: 2.5rem;
+}
+.screenshots .scs-control input[type=radio] {
+  appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #bcccdc;
+  border-radius: 50%;
+  margin: 0 1rem;
+}
+.screenshots .scs-control input[type=radio]:checked {
+  background-color: var(--blue);
+}
+
+.faq {
+  margin-top: 19rem;
+  text-align: center;
+}
+.faq-content {
+  margin-top: 6rem;
+}
+.faq .questions-grp .question {
+  height: 7.7rem;
+  width: 67rem;
+  box-shadow: 0 1.5rem 3.5rem 0 rgba(51, 78, 104, 0.1);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  padding: 0 2.8rem;
+  transition: height 0.5s linear;
+}
+.faq .questions-grp .question.active {
+  height: 17rem;
+}
+.faq .questions-grp .question.active .title i {
+  rotate: 90deg;
+  color: var(--blue);
+}
+.faq .questions-grp .question .title {
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.faq .questions-grp .question .title h3 {
+  color: var(--gray);
+  line-height: 7.7rem;
+  font-size: 1.8rem;
+}
+.faq .questions-grp .question .title p {
+  line-height: 2.8rem;
+  font-size: 1.6rem;
+}
+.faq .questions-grp .question .title i {
+  rotate: 0deg;
+  font-size: 1.8rem;
+  color: #bcccdc;
+}
+
+.cta {
+  margin-top: 19rem;
+  background-color: var(--blue);
+  text-align: center;
+  padding: 6rem 39rem;
+  flex-direction: column;
+}
+.cta h1 {
+  color: var(--white);
+  line-height: 8rem;
+}
+.cta p {
+  color: var(--white);
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  width: 57rem;
+}
+.cta .email {
+  background-color: var(--white);
+  border-radius: 25rem;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+  width: 51rem;
+  margin-top: 3rem;
+}
+.cta .email i {
+  font-size: 2.4rem;
+  color: var(--blue);
+}
+.cta .email input, .cta .email button {
+  font-size: 1.8rem;
+  border: none;
+}
+.cta .email input {
+  padding: 2rem;
+}
+.cta .email input::placeholder {
+  text-transform: capitalize;
+  color: var(--blue);
+}
+.cta .email button {
+  background-color: var(--blue);
+  color: var(--white);
+  text-transform: capitalize;
+  padding: 2rem 5.2rem;
+  border-radius: 25rem;
+  cursor: pointer;
+}
+.cta .apps {
+  margin-top: 5rem;
+}
+.cta .apps a {
+  font-size: 2.4rem;
+  color: #e6f6ff;
+  margin: 0 0.8rem;
+}
+.cta::before {
+  top: 0;
+  left: 100%;
+  background: url(../img/download-left-device.png) no-repeat;
+  background-position: bottom;
+  transition: 1s;
+}
+.cta::after {
+  top: 0;
+  right: 100%;
+  background: url(../img/download-right-device.png) no-repeat;
+  transition: 1s;
+}
+.cta.scroll::before {
+  left: 0;
+}
+.cta.scroll::after {
+  right: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
