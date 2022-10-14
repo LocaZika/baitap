@@ -6,11 +6,11 @@
   display: inline-block;
 }
 
-.cta, .faq .questions-grp, .screenshots .scs-img, .screenshots, .testimonial .feedback-grp, .hiw-video button, header {
+.cta, .faq .questions-grp, .screenshots .scs-img, .screenshots, .testimonial .feedback-grp, .hiw-video button, .hiw-steps div, header {
   position: relative;
 }
 
-.screenshots .scs-control, .testimonial .feedback-grp > i, #bg, .cta::after, .cta::before {
+.screenshots .scs-control, .testimonial .feedback-grp > i, .hiw-steps div::before, #bg, .cta::after, .cta::before {
   position: absolute;
 }
 
@@ -120,6 +120,7 @@ main {
 }
 main h1, main span {
   font-size: 4.8rem;
+  line-height: 8rem;
 }
 main h1::first-letter, main span::first-letter {
   text-transform: uppercase;
@@ -148,6 +149,15 @@ main p {
 .hiw-steps div:hover {
   background-color: var(--white);
   box-shadow: 0 1.5rem 3.5rem 0 rgba(51, 78, 104, 0.1);
+}
+.hiw-steps div::before {
+  content: attr(step);
+  top: 0;
+  left: 15%;
+  font-size: 20.5rem;
+  color: #d9e2ec;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
 }
 .hiw-steps div h2, .hiw-steps div span {
   font-size: 2.4rem;
@@ -347,14 +357,14 @@ main p {
   line-height: 7.7rem;
   font-size: 1.8rem;
 }
-.faq .questions-grp .question .title p {
-  line-height: 2.8rem;
-  font-size: 1.6rem;
-}
 .faq .questions-grp .question .title i {
   rotate: 0deg;
   font-size: 1.8rem;
   color: #bcccdc;
+}
+.faq .questions-grp .question p {
+  line-height: 2.8rem;
+  font-size: 1.6rem;
 }
 
 .cta {
@@ -366,7 +376,6 @@ main p {
 }
 .cta h1 {
   color: var(--white);
-  line-height: 8rem;
 }
 .cta p {
   color: var(--white);
@@ -432,6 +441,11 @@ main p {
 }
 .cta.scroll::after {
   right: 0;
+}
+
+.pricing {
+  text-align: center;
+  margin-top: 18rem;
 }
 
 /*# sourceMappingURL=style.css.map */

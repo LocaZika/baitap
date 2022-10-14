@@ -14,5 +14,5 @@ for (const index in questions) {
   }
 }
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 5220) $(".cta").classList.add("scroll");
+  if (window.scrollY > 5110) $(".cta").classList.add("scroll");
 });

@@ -74,6 +74,7 @@ main{
   padding-top: 4rem;
   h1, span{
     font-size: 4.8rem;
+    line-height: 8rem;
     &::first-letter{
       text-transform: uppercase;
     }
@@ -96,9 +97,20 @@ main{
       width: 37.8rem;
       height: 31.8rem;
       border-radius: 2.5rem;
+      @extend %pos-rel;
       &:hover{
         background-color: var(--white);
         box-shadow: 0 1.5rem 3.5rem 0 rgba($color: #334e68, $alpha: .1);
+      }
+      &::before{
+        content: attr(step);
+        @extend %pos-abs;
+        top: 0;
+        left: 15%;
+        font-size: 20.5rem;
+        color: #d9e2ec;
+        opacity: .3;
+        mix-blend-mode: multiply;
       }
       h2, span{
         font-size: 2.4rem;
@@ -313,15 +325,15 @@ main{
           line-height: 7.7rem;
           font-size: 1.8rem;
         }
-        p{
-          line-height: 2.8rem;
-          font-size: 1.6rem;
-        }
         i{
           rotate: 0deg;
           font-size: 1.8rem;
           color: #bcccdc;
         }
+      }
+      p{
+        line-height: 2.8rem;
+        font-size: 1.6rem;
       }
     }
   }
@@ -335,7 +347,6 @@ main{
   @extend %pos-rel;
   h1{
     color: var(--white);
-    line-height: 8rem;
   }
   p{
     color: var(--white);
@@ -405,4 +416,8 @@ main{
       right: 0;
     }
   }
+}
+.pricing{
+  text-align: center;
+  margin-top: 18rem;
 }
