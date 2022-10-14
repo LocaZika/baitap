@@ -9,6 +9,12 @@ body{
 .container{
   width: 100%;
 }
+.center {
+  @include flex(center, center);
+}
+.text-center {
+  text-align: center;
+}
 span{
   color: var(--blue);
 }
@@ -21,14 +27,15 @@ span{
 header{
   padding: 1.8rem 1.5rem;
   @extend %pos-rel;
-  background: #f4f2f9 url(../img/header-bg.jpg) no-repeat center/cover;
-  mix-blend-mode: darken;
+  background: #1494df url(../img/header-bg.svg) no-repeat center/cover;
+  mix-blend-mode: multiply;
 }
 .navbar{
   @include flex(space-around, center);
   a{
     color: var(--white);
     font-size: 1.6rem;
+    font-weight: 700;
     padding: 1.5rem 6rem;
     margin: 0 .25rem;
     @extend %d-inline;
@@ -59,15 +66,17 @@ header{
   }
 }
 .hero{
-  text-align: center;
   margin-top: 11.5rem;
   h1{
     color: var(--white);
     font-size: 6.6rem;
     text-transform: capitalize;
+    width: 60rem;
+    margin: 0 auto;
   }
   img{
     margin-top: 6rem;
+    min-height: 74rem;
   }
 }
 main{
@@ -83,9 +92,6 @@ main{
     color: var(--gray);
   }
 }
-.center{
-  @include flex(center, center);
-}
 .hiw{
   flex-direction: column;
   background: var(--white) url(../img/Wave.png) no-repeat right bottom;
@@ -94,8 +100,8 @@ main{
     div{
       display: inline-block;
       padding: 9.5rem 4.5rem 4.5rem;
-      width: 37.8rem;
-      height: 31.8rem;
+      width: 38rem;
+      min-height: 32rem;
       border-radius: 2.5rem;
       @extend %pos-rel;
       &:hover{
@@ -134,7 +140,6 @@ main{
   }
   &-title{
     margin-top: 14rem;
-    text-align: center;
     width: 67rem;
     h2{
       &::first-letter{
@@ -174,7 +179,6 @@ main{
   }
 }
 .testimonial{
-  text-align: center;
   margin-top: 19rem;
   padding: 0 39rem;
   background: var(--white) url(../img/Wave-testi.png) no-repeat left bottom;
@@ -246,7 +250,6 @@ main{
 }
 .screenshots{
   margin-top: 16rem;
-  text-align: center;
   transition: 1s;
   @extend %pos-rel;
   h1{
@@ -294,7 +297,6 @@ main{
 }
 .faq{
   margin-top: 19rem;
-  text-align: center;
   &-content{
     margin-top: 6rem;
   }
@@ -341,7 +343,6 @@ main{
 .cta{
   margin-top: 19rem;
   background-color: var(--blue);
-  text-align: center;
   padding: 6rem 39rem;
   flex-direction: column;
   @extend %pos-rel;
@@ -418,6 +419,5 @@ main{
   }
 }
 .pricing{
-  text-align: center;
   margin-top: 18rem;
 }
