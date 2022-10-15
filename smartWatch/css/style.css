@@ -80,7 +80,7 @@ span {
 header {
   padding: 1.8rem 1.5rem;
   background: no-repeat center/cover;
-  background-image: linear-gradient(to bottom, var(--blue) 0 50%, transparent 50%), url(../img/header-bg.svg);
+  background-image: url(../img/header-bg.svg), linear-gradient(to bottom, var(--blue) 0 50%, transparent 50%);
 }
 
 .navbar {
