@@ -326,7 +326,6 @@ main button {
   content: " ";
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0 20%, rgba(255, 255, 255, 0.25) 20% 40%, transparent 40% 60%, rgba(255, 255, 255, 0.25) 60% 80%, rgba(255, 255, 255, 0.5) 80%);
   z-index: 1;
 }
 .screenshots .scs-imgs img {
@@ -342,18 +341,23 @@ main button {
 }
 .screenshots .scs-imgs #scs-img1 {
   left: var(--img1-left);
+  opacity: var(--img0-opacity);
 }
 .screenshots .scs-imgs #scs-img2 {
   left: var(--img2-left);
+  opacity: var(--img1-opacity);
 }
 .screenshots .scs-imgs #scs-img3 {
   left: var(--img3-left);
+  opacity: var(--img2-opacity);
 }
 .screenshots .scs-imgs #scs-img4 {
   left: var(--img4-left);
+  opacity: var(--img3-opacity);
 }
 .screenshots .scs-imgs #scs-img5 {
   left: var(--img5-left);
+  opacity: var(--img4-opacity);
 }
 .screenshots .scs-control {
   top: 100%;

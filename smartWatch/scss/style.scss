@@ -278,20 +278,13 @@ main{
       content: ' ';
       height: 100%;
       width: 100%;
-      background-image: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.5) 0 20%,
-        rgba(255, 255, 255, 0.25) 20% 40%,
-        transparent 40% 60%,
-        rgba(255, 255, 255, 0.25) 60% 80%,
-        rgba(255, 255, 255, 0.5) 80%);
       // background-image: linear-gradient(
       //   to right,
-      //   rgba(13, 228, 84, 0.5) 0 20%,
-      //   rgba(197, 9, 9, 0.75) 20% 40%,
+      //   rgba(255, 255, 255, 0.5) 0 20%,
+      //   rgba(255, 255, 255, 0.25) 20% 40%,
       //   transparent 40% 60%,
-      //   rgba(194, 25, 180, 0.75) 60% 80%,
-      //   rgba(175, 209, 25, 0.5) 80%);
+      //   rgba(255, 255, 255, 0.25) 60% 80%,
+      //   rgba(255, 255, 255, 0.5) 80%);
       z-index: 1;
     }
     img{
@@ -308,23 +301,23 @@ main{
     }
     #scs-img1{
       left: var(--img1-left);
-      // opacity: var(--img0-opacity);
+      opacity: var(--img0-opacity);
     }
     #scs-img2{
       left: var(--img2-left);
-      // opacity: var(--img1-opacity);
+      opacity: var(--img1-opacity);
     }
     #scs-img3{
       left: var(--img3-left);
-      // opacity: var(--img2-opacity);
+      opacity: var(--img2-opacity);
     }
     #scs-img4{
       left: var(--img4-left);
-      // opacity: var(--img3-opacity);
+      opacity: var(--img3-opacity);
     }
     #scs-img5{
       left: var(--img5-left);
-      // opacity: var(--img4-opacity);
+      opacity: var(--img4-opacity);
     }
   }
   .scs-control{

@@ -32,62 +32,87 @@ for (const index in scsControl) {
         case $("#scs-ctrl1").checked:
           $("#scs-img1").style.left = "50%";
           $("#scs-img1").style.scale = "105%";
+          $("#scs-img1").style.opacity = "1";
           $("#scs-img2").style.left = "30%";
           $("#scs-img2").style.scale = "100%";
+          $("#scs-img2").style.opacity = ".75";
           $("#scs-img3").style.left = "10%";
           $("#scs-img3").style.scale = "100%";
+          $("#scs-img3").style.opacity = ".5";
           $("#scs-img4").style.left = "70%";
           $("#scs-img4").style.scale = "100%";
+          $("#scs-img4").style.opacity = ".75";
           $("#scs-img5").style.left = "90%";
           $("#scs-img5").style.scale = "100%";
+          $("#scs-img5").style.opacity = ".5";
           break;
         case $("#scs-ctrl2").checked:
           $("#scs-img1").style.left = "10%";
           $("#scs-img1").style.scale = "100%";
+          $("#scs-img1").style.opacity = ".5";
           $("#scs-img2").style.left = "50%";
           $("#scs-img2").style.scale = "105%";
+          $("#scs-img2").style.opacity = "1";
           $("#scs-img3").style.left = "30%";
           $("#scs-img3").style.scale = "100%";
+          $("#scs-img3").style.opacity = ".75";
           $("#scs-img4").style.left = "70%";
           $("#scs-img4").style.scale = "100%";
+          $("#scs-img4").style.opacity = ".75";
           $("#scs-img5").style.left = "90%";
           $("#scs-img5").style.scale = "100%";
+          $("#scs-img5").style.opacity = ".5";
           break;
         case $("#scs-ctrl3").checked:
           $("#scs-img1").style.left = "10%";
           $("#scs-img1").style.scale = "100%";
+          $("#scs-img1").style.opacity = ".5";
           $("#scs-img2").style.left = "30%";
           $("#scs-img2").style.scale = "100%";
+          $("#scs-img2").style.opacity = ".75";
           $("#scs-img3").style.left = "50%";
           $("#scs-img3").style.scale = "105%";
+          $("#scs-img3").style.opacity = "1";
           $("#scs-img4").style.left = "70%";
           $("#scs-img4").style.scale = "100%";
+          $("#scs-img4").style.opacity = ".75";
           $("#scs-img5").style.left = "90%";
           $("#scs-img5").style.scale = "100%";
+          $("#scs-img5").style.opacity = ".5";
           break;
         case $("#scs-ctrl4").checked:
           $("#scs-img1").style.left = "10%";
           $("#scs-img1").style.scale = "100%";
+          $("#scs-img1").style.opacity = ".5";
           $("#scs-img2").style.left = "30%";
           $("#scs-img2").style.scale = "100%";
+          $("#scs-img2").style.opacity = ".75";
           $("#scs-img3").style.left = "70%";
           $("#scs-img3").style.scale = "100%";
+          $("#scs-img3").style.opacity = ".75";
           $("#scs-img4").style.left = "50%";
           $("#scs-img4").style.scale = "105%";
+          $("#scs-img4").style.opacity = "1";
           $("#scs-img5").style.left = "90%";
           $("#scs-img5").style.scale = "100%";
+          $("#scs-img5").style.opacity = "5";
           break;
         case $("#scs-ctrl5").checked:
           $("#scs-img1").style.left = "10%";
           $("#scs-img1").style.scale = "100%";
+          $("#scs-img1").style.opacity = ".5";
           $("#scs-img2").style.left = "30%";
           $("#scs-img2").style.scale = "100%";
+          $("#scs-img2").style.opacity = ".75";
           $("#scs-img3").style.left = "90%";
           $("#scs-img3").style.scale = "100%";
+          $("#scs-img3").style.opacity = ".5";
           $("#scs-img4").style.left = "70%";
           $("#scs-img4").style.scale = "100%";
+          $("#scs-img4").style.opacity = ".75";
           $("#scs-img5").style.left = "50%";
           $("#scs-img5").style.scale = "105%";
+          $("#scs-img5").style.opacity = "1";
           break;
 
         default:
