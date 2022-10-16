@@ -58,8 +58,12 @@
   border: 5px solid;
 }
 
-%pos-0 {
+%pos-0-top {
   top: 0;
+  left: 0;
+}
+%pos-0-bottom {
+  bottom: 0;
   left: 0;
 }
 
@@ -80,4 +84,17 @@
   @extend %pos-abs;
   width: 68rem;
   @extend %h-100;
+}
+%pseudo-bg{
+  @extend %pseudo-playbtn;
+  @extend %pos-abs;
+}
+%pseudo-z-index{
+  z-index: -1;
+}
+@mixin pseudo-wave-bg($url){
+  @extend %pseudo-bg;
+  @extend %pseudo-z-index;
+  @extend %pos-0-bottom;
+  background: var(--white) url("../img/wave-"+ $url +".png") no-repeat $url bottom;
 }

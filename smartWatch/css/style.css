@@ -10,11 +10,11 @@ footer .footer-bottom .socials, footer .footer-bottom, footer .footer-top .downl
   display: block;
 }
 
-.cta, .faq .questions-grp, .screenshots .scs-img, .screenshots, .testimonial .feedback-grp, .hiw-video button, .hiw-steps .step, header {
+.posts, .pricing, .cta, .faq .questions-grp, .faq, .screenshots .scs-imgs, .screenshots, .testimonial .feedback-grp, .testimonial, .hiw-video button, .hiw-steps .step, .hiw, header {
   position: relative;
 }
 
-.screenshots .scs-control, .testimonial .feedback-grp > i, .hiw-steps .step::before, #bg, .cta::after, .cta::before {
+.screenshots .scs-control, .screenshots .scs-imgs label, .testimonial .feedback-grp > i, .hiw-steps .step::before, #bg, .posts::after, .pricing::after, .faq::before, .testimonial::after, .hiw::after, .cta::after, .cta::before {
   position: absolute;
 }
 
@@ -22,17 +22,31 @@ footer .footer-bottom .socials, footer .footer-bottom, footer .footer-top .downl
   height: 100%;
 }
 
-.screenshots .scs-img, #bg {
+.screenshots .scs-imgs, #bg {
   top: 0;
   left: 0;
 }
 
-.cta::after, .cta::before {
+.posts::after, .pricing::after, .faq::before, .testimonial::after, .hiw::after {
+  bottom: 0;
+  left: 0;
+}
+
+.cta::after, .cta::before, .posts::after, .pricing::after, .faq::before, .testimonial::after, .hiw::after {
   content: " ";
+}
+
+.posts::after, .pricing::after, .faq::before, .testimonial::after, .hiw::after {
+  width: 100%;
+  height: 100%;
 }
 
 .cta::after, .cta::before {
   width: 68rem;
+}
+
+.posts::after, .pricing::after, .faq::before, .testimonial::after, .hiw::after {
+  z-index: -1;
 }
 
 :root {
@@ -40,7 +54,16 @@ footer .footer-bottom .socials, footer .footer-bottom, footer .footer-top .downl
   --blue-deep: #334e68;
   --gray: #627d98;
   --white: #ffffff;
-  --dl-pseudo: 100%;
+  --img1-left: 10%;
+  --img1-opacity: .5;
+  --img2-left: 30%;
+  --img2-opacity: .75;
+  --img3-left: 50%;
+  --img3-opacity: 1;
+  --img4-left: 70%;
+  --img4-opacity: .75;
+  --img5-left: 90%;
+  --img5-opacity: .5;
 }
 
 .container {
@@ -152,8 +175,10 @@ main button {
 
 .hiw {
   flex-direction: column;
-  background: var(--white) url(../img/Wave.png) no-repeat right bottom;
   mix-blend-mode: multiply;
+}
+.hiw::after {
+  background: var(--white) url("../img/wave-right.png") no-repeat right bottom;
 }
 .hiw-steps .step {
   display: inline-block;
@@ -227,7 +252,9 @@ main button {
 
 .testimonial {
   padding: 0 39rem;
-  background: var(--white) url(../img/Wave-testi.png) no-repeat left bottom;
+}
+.testimonial::after {
+  background: var(--white) url("../img/wave-left.png") no-repeat left bottom;
 }
 .testimonial h1 {
   margin-bottom: 6rem;
@@ -291,31 +318,44 @@ main button {
   line-height: 8.865rem;
   margin-bottom: 6.8rem;
 }
-.screenshots .scs-img {
+.screenshots .scs-imgs {
   height: 62rem;
 }
-.screenshots .scs-img img {
+.screenshots .scs-imgs img {
   margin: 2.5rem;
   box-shadow: 0 1.5rem 3.5rem 0 rgba(51, 78, 104, 0.25);
   border-radius: 2.5rem;
 }
-.screenshots .scs-img label {
+.screenshots .scs-imgs label {
   top: 0;
+  translate: -50% 0;
+  transition: left 1s linear;
 }
-.screenshots .scs-img .opacity1 {
-  opacity: 1;
+.screenshots .scs-imgs #scs-img1 {
+  left: var(--img1-left);
+  opacity: var(--img1-opacity);
 }
-.screenshots .scs-img .opacity50 {
-  opacity: 0.5;
+.screenshots .scs-imgs #scs-img2 {
+  left: var(--img2-left);
+  opacity: var(--img2-opacity);
 }
-.screenshots .scs-img .opacity75 {
-  opacity: 0.75;
+.screenshots .scs-imgs #scs-img3 {
+  left: var(--img3-left);
+  opacity: var(--img3-opacity);
+}
+.screenshots .scs-imgs #scs-img4 {
+  left: var(--img4-left);
+  opacity: var(--img4-opacity);
+}
+.screenshots .scs-imgs #scs-img5 {
+  left: var(--img5-left);
+  opacity: var(--img5-opacity);
 }
 .screenshots .scs-control {
   top: 100%;
   left: 50%;
   translate: -50% 0;
-  margin-top: 2.5rem;
+  margin-top: 4.5rem;
 }
 .screenshots .scs-control input[type=radio] {
   appearance: none;
@@ -331,6 +371,9 @@ main button {
 
 .faq-content {
   margin-top: 6rem;
+}
+.faq::before {
+  background: var(--white) url("../img/wave-right.png") no-repeat right bottom;
 }
 .faq .questions-grp .question {
   height: 7.7rem;
@@ -444,6 +487,9 @@ main button {
 .pricing {
   padding: 0 47rem;
 }
+.pricing::after {
+  background: var(--white) url("../img/wave-left.png") no-repeat left bottom;
+}
 .pricing > p {
   margin-top: 2rem;
   font-size: 1.8rem;
@@ -534,6 +580,9 @@ main button {
 
 .posts {
   text-align: center;
+}
+.posts::after {
+  background: var(--white) url("../img/wave-right.png") no-repeat right bottom;
 }
 .posts__content {
   margin-top: 9rem;
