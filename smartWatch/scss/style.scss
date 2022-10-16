@@ -205,6 +205,7 @@ main{
     .person{
       width: 45%;
       > img {
+        min-height: 38rem;
         width: 40rem;
       }
     }
@@ -270,10 +271,31 @@ main{
     margin-bottom: 6.8rem;
   }
   .scs-imgs{
-    height: 62rem;
+    height: 63rem;
     @extend %pos-rel;
     @extend %pos-0-top;
+    &::before{
+      content: ' ';
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.5) 0 20%,
+        rgba(255, 255, 255, 0.25) 20% 40%,
+        transparent 40% 60%,
+        rgba(255, 255, 255, 0.25) 60% 80%,
+        rgba(255, 255, 255, 0.5) 80%);
+      // background-image: linear-gradient(
+      //   to right,
+      //   rgba(13, 228, 84, 0.5) 0 20%,
+      //   rgba(197, 9, 9, 0.75) 20% 40%,
+      //   transparent 40% 60%,
+      //   rgba(194, 25, 180, 0.75) 60% 80%,
+      //   rgba(175, 209, 25, 0.5) 80%);
+      z-index: 1;
+    }
     img{
+      min-height: 60rem;
       margin: 2.5rem;
       box-shadow: 0 1.5rem 3.5rem 0 rgba($color: #334e68, $alpha: .25);
       border-radius: 2.5rem;
@@ -282,27 +304,27 @@ main{
       top: 0;
       @extend %pos-abs;
       translate: -50% 0;
-      transition: left 1s linear;
+      transition: left .5s linear, scale 1s .5s;
     }
     #scs-img1{
       left: var(--img1-left);
-      opacity: var(--img1-opacity);
+      // opacity: var(--img0-opacity);
     }
     #scs-img2{
       left: var(--img2-left);
-      opacity: var(--img2-opacity);
+      // opacity: var(--img1-opacity);
     }
     #scs-img3{
       left: var(--img3-left);
-      opacity: var(--img3-opacity);
+      // opacity: var(--img2-opacity);
     }
     #scs-img4{
       left: var(--img4-left);
-      opacity: var(--img4-opacity);
+      // opacity: var(--img3-opacity);
     }
     #scs-img5{
       left: var(--img5-left);
-      opacity: var(--img5-opacity);
+      // opacity: var(--img4-opacity);
     }
   }
   .scs-control{
@@ -322,6 +344,15 @@ main{
         background-color: var(--blue);
       }
     }
+    // #scs-ctrl1{
+    //   &:checked{
+    //     ~ .scs-imgs #scs-img1{left: 50%;}
+    //     ~ #scs-img2{left: 30%;}
+    //     ~ .scs-imgs #scs-img3{left: 10%;}
+    //     ~ #scs-img4{left: 70%;}
+    //     ~ #scs-img5{left: 90%;}
+    //   }
+    // }
   }
 }
 .faq{
@@ -351,6 +382,7 @@ main{
           color: var(--blue);
         }
       }
+
       .title{
         @include flex(space-between, center);
         cursor: pointer;
@@ -370,6 +402,9 @@ main{
         line-height: 2.8rem;
       }
     }
+  }
+  >img{
+    min-height: 74rem;
   }
 }
 .cta{
@@ -467,7 +502,7 @@ main{
       box-shadow: 0 1.5rem 3.5rem 0 rgba($color: #334e68, $alpha: .1);
       flex-direction: column;
       height: 57rem;
-      width: 31rem;
+      // width: 31rem;
       border-radius: 1rem;
       &:hover{
         background-color: var(--blue);

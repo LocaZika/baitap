@@ -263,6 +263,7 @@ main button {
   width: 45%;
 }
 .testimonial .feedback-grp .person > img {
+  min-height: 38rem;
   width: 40rem;
 }
 .testimonial .feedback-grp > i {
@@ -319,9 +320,17 @@ main button {
   margin-bottom: 6.8rem;
 }
 .screenshots .scs-imgs {
-  height: 62rem;
+  height: 63rem;
+}
+.screenshots .scs-imgs::before {
+  content: " ";
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0 20%, rgba(255, 255, 255, 0.25) 20% 40%, transparent 40% 60%, rgba(255, 255, 255, 0.25) 60% 80%, rgba(255, 255, 255, 0.5) 80%);
+  z-index: 1;
 }
 .screenshots .scs-imgs img {
+  min-height: 60rem;
   margin: 2.5rem;
   box-shadow: 0 1.5rem 3.5rem 0 rgba(51, 78, 104, 0.25);
   border-radius: 2.5rem;
@@ -329,27 +338,22 @@ main button {
 .screenshots .scs-imgs label {
   top: 0;
   translate: -50% 0;
-  transition: left 1s linear;
+  transition: left 0.5s linear, scale 1s 0.5s;
 }
 .screenshots .scs-imgs #scs-img1 {
   left: var(--img1-left);
-  opacity: var(--img1-opacity);
 }
 .screenshots .scs-imgs #scs-img2 {
   left: var(--img2-left);
-  opacity: var(--img2-opacity);
 }
 .screenshots .scs-imgs #scs-img3 {
   left: var(--img3-left);
-  opacity: var(--img3-opacity);
 }
 .screenshots .scs-imgs #scs-img4 {
   left: var(--img4-left);
-  opacity: var(--img4-opacity);
 }
 .screenshots .scs-imgs #scs-img5 {
   left: var(--img5-left);
-  opacity: var(--img5-opacity);
 }
 .screenshots .scs-control {
   top: 100%;
@@ -410,6 +414,9 @@ main button {
 }
 .faq .questions-grp .question p {
   line-height: 2.8rem;
+}
+.faq > img {
+  min-height: 74rem;
 }
 
 .cta {
@@ -505,7 +512,6 @@ main button {
   box-shadow: 0 1.5rem 3.5rem 0 rgba(51, 78, 104, 0.1);
   flex-direction: column;
   height: 57rem;
-  width: 31rem;
   border-radius: 1rem;
 }
 .pricing .editions .edition:hover {
