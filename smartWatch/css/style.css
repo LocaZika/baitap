@@ -401,6 +401,9 @@ main button {
   rotate: 90deg;
   color: var(--blue);
 }
+.faq .questions-grp .question h3::first-letter, .faq .questions-grp .question p::first-letter {
+  text-transform: uppercase;
+}
 .faq .questions-grp .question .title {
   justify-content: space-between;
   align-items: center;
@@ -517,6 +520,7 @@ main button {
   box-shadow: 0 1.5rem 3.5rem 0 rgba(51, 78, 104, 0.1);
   flex-direction: column;
   height: 57rem;
+  transition: 1s;
   border-radius: 1rem;
 }
 .pricing .editions .edition:hover {

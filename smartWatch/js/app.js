@@ -3,7 +3,7 @@ const $$ = document.querySelectorAll.bind(document);
 /*===CHANGE #bg HEIGHT===*/
 const resizeObs = new ResizeObserver(() => {
   $("#bg").style = `height: ${$("header").offsetHeight + "px"};
-   top: 70%;`;
+   top: 50%;`;
 });
 resizeObs.observe($("header"));
 /*===FAQ SHOW/HIDE===*/
