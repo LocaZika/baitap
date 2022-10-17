@@ -300,6 +300,7 @@ main button {
 }
 .testimonial .feedback-grp .feedback .control-comment .person-name p {
   line-height: 2.65rem;
+  text-transform: capitalize;
 }
 .testimonial .feedback-grp .feedback .control-comment .control button {
   font-size: 2rem;

@@ -1,0 +1,17 @@
+{
+  "person1": {
+    "name": "mike smith",
+    "position": "Chief Executive Officer",
+    "narrative": "Needless to say we are extremely satisfied with the results. Man, this thing is getting better and better as I learn more about it. AppNep has really helped our business. I am really satisfied with AppNep."
+  },
+  "person2": {
+    "name": "bùi văn nguyện",
+    "position": "mentor tech2",
+    "narrative": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe possimus recusandae magnam aspernatur mollitia temporibus quibusdam minus ea voluptas, quis eveniet sint eius corrupti non ab vel rem incidunt! Voluptates."
+  },
+  "person3": {
+    "name": "bùi như pha",
+    "position": "front-end developer",
+    "narrative": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe possimus recusandae magnam aspernatur mollitia temporibus quibusdam minus ea voluptas, quis eveniet sint eius corrupti non ab vel rem incidunt! Voluptates."
+  }
+}

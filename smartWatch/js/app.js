@@ -121,3 +121,27 @@ for (const index in scsControl) {
     });
   }
 }
+/*===TESTIMONIAL ANIMATE===*/
+const contentTestimonial = async () => {
+  const getFile = await fetch("./js/database.json");
+  const getData = await getFile.json();
+  // console.log(getData);
+  const firstPerson = getData[Object.keys(getData)[1]];
+  console.log(getData[Object.keys(getData)[1]]);
+  for (let i = 0; i < Object.keys(getData).length; i++) {
+    let person = getData[Object.keys(getData)[i]];
+
+    $("#next").addEventListener("click", () => {
+      if (i == Object.keys(getData).length - 1) {
+        $(".comment p").innerText = firstPerson.narrative;
+        $(".person-name h3").innerText = firstPerson.name;
+        $(".person-name p").innerText = firstPerson.position;
+      } else {
+        $(".comment p").innerText = person.narrative;
+        $(".person-name h3").innerText = person.name;
+        $(".person-name p").innerText = person.position;
+      }
+    });
+  }
+};
+contentTestimonial();
