@@ -1,0 +1,26 @@
+{
+  "home": {
+    "name": "home",
+    "href": "#"
+  },
+  "about": {
+    "name": "about",
+    "href": "#"
+  },
+  "page": {
+    "name": "page",
+    "href": "#"
+  },
+  "services": {
+    "name": "services",
+    "href": "#"
+  },
+  "case study": {
+    "name": "case study",
+    "href": "#"
+  },
+  "contact": {
+    "name": "contact",
+    "href": "#"
+  }
+}

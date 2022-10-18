@@ -1,0 +1,17 @@
+{
+  "content": {
+    "title": "we are on a mission to make your bussiness profitable",
+    "text": "various versions have evolved over the years, sometimes by sometimes on purpose."
+  },
+  "links": {
+    "linkLeft": {
+      "text": "explore more",
+      "href": "#"
+      },
+    "linkRight": {
+      "text": "get quote",
+      "href": "#"
+      }
+  },
+  "backgroundImg": "header-bg.png"
+}
