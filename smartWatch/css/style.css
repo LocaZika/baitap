@@ -22,7 +22,7 @@ footer .footer-bottom .socials, footer .footer-bottom, footer .footer-top .downl
   height: 100%;
 }
 
-.screenshots .scs-imgs, #bg {
+.screenshots .scs-imgs {
   top: 0;
   left: 0;
 }
@@ -96,6 +96,8 @@ span {
 }
 
 #bg {
+  top: 20%;
+  left: 0;
   background-image: linear-gradient(0deg, white, #f4f2f9);
   z-index: -1;
 }
@@ -577,6 +579,7 @@ main button {
 .pricing .editions .edition .benefit__content span {
   color: var(--gray);
   margin-top: 1.5rem;
+  margin-left: 1rem;
 }
 .pricing .editions .edition > a {
   border: 0.2rem solid var(--blue);

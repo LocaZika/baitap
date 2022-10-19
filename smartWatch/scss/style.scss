@@ -30,7 +30,8 @@ span{
 
 #bg{
   @extend %pos-abs;
-  @extend %pos-0-top;
+  top: 20%;
+  left: 0;
   background-image: linear-gradient(0deg, #ffff, #f4f2f9);
   z-index: -1;
 }
@@ -550,12 +551,13 @@ main{
         }
         &__content{
           text-align: left;
-          margin-left: 1rem;
           span{
             @extend %d-block;
             color: var(--gray);
             margin-top: 1.5rem;
+            margin-left: 1rem;
           }
+          margin-left: 1rem;
         }
       }
       > a{

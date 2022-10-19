@@ -2,8 +2,7 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 /*===CHANGE #bg HEIGHT===*/
 const resizeObs = new ResizeObserver(() => {
-  $("#bg").style = `height: ${$("header").offsetHeight + "px"};
-   top: 20%;`;
+  $("#bg").style = `height: ${$("header").offsetHeight + "px"};`;
 });
 resizeObs.observe($("header"));
 /*===FAQ SHOW/HIDE===*/
