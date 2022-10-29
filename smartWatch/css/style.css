@@ -492,10 +492,10 @@ main button {
   transition: 1s;
 }
 .cta.scroll::before {
-  left: 0;
+  left: -66.5rem;
 }
 .cta.scroll::after {
-  right: 0;
+  right: -66.5rem;
 }
 
 .pricing {
